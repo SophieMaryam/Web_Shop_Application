@@ -33,14 +33,27 @@ app.use(session({
 
 }));
 
-app.get('/profile', (req,res) => {
-	res.render('profile')
-});
-
 
 // Contact Page 
 app.get('/contact', (req,res) => {
 	res.render('contact')
+});
+
+
+app.get('/profile', (req, res) => {
+	res.render('profile')
+	var user = req.session.user;
+	if(!user){
+		res.redirect('/?message=' + encodeURIComponent("Please log in."));
+	}
+
+	if(user === undefined){
+		res.redirect('/?message=' + encodeURIComponent("Please log in to view your profile."));
+	} else {
+		res.render('profile', {
+			user:user
+		});
+	}
 });
 
 

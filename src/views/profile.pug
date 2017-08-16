@@ -1,5 +1,45 @@
 doctype
 html 
 	head
+		title Profile 
+		link(href="path/to/lightbox.css" rel="stylesheet")
 	body
-		p hi it worked!
+		h5 username:
+			//- h6 #{user.name}
+		h5 Email: 
+			//- h6 #{user.email}
+		
+		form(action="/email" method="post" name="form")
+			label To: 
+			input(name="to" type="text", placeholder="example@gmail.com")
+			label From: 
+			input(name="from" type="text", placeholder="example@gmail.com")
+			label Subject
+			input(name="subject" type="text", placeholder="Subject")
+			label Content
+			input(name="content" type="text" placeholder="Text..." rows="100", columns="100")
+			label For verification, please insert your email's password. 
+			input(name="password" type="password" placeholder="Email password") 
+			button(type="submit") Submit
+
+
+
+	script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+	script.
+
+
+
+
+
+		//- $(document).ready(() => {
+		//- 	$(".activate-modal").click(function(e){
+		//- 		e.preventDefault()
+		//- 		$(".modal-wrapper").show()
+		//- 		$("body").addClass("modal-on")
+		//- 	}) 
+		//- 	$('.exit').click((e) => {
+		//- 		e.preventDefault()
+		//- 		$('.modal-wrapper').hide()
+		//- 		$('body').removeClass('modal-on')
+		//- 	})
+		//- })
