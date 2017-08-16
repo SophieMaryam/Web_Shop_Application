@@ -1,10 +1,10 @@
-const express = require('express'); 
-const app = express(); 
+const express = require('express');
+const app = express();
 
-const bodyParser = require('body-parser'); 
+const bodyParser = require('body-parser');
 app.use('/', bodyParser.urlencoded({extended:true}));
 
-// Model Configuration 
+// Model Configuration
 const Sequelize = require('sequelize');
 const connection = new Sequelize('', '', '', {
 	host: 'localhost',
@@ -23,12 +23,90 @@ app.use(express.static(__dirname + "/../public"));
 
 // Sessions
 
-const session = require('express-session'); 
+const session = require('express-session');
 
 
 app.use(session({
 	secret: "This is a secret",
-	resave:false, 
+	resave:false,
 	saveUninitialized: true
-
 }));
+
+// database
+
+const sequelize = new Sequelize('postgres://account1@localhost/web_shop_application');
+
+const User = sequelize.define('user',{
+	name: Sequelize.STRING,
+	email: Sequelize.STRING,
+	password: Sequelize.STRING
+});
+
+sequelize.sync({force:false})
+
+//rendering register page
+app.get('/',(req,res) => {
+	res.render('register')
+});
+
+// registering and storing new user in the database
+app.post('/register',(req,res) => {
+
+	User.create({
+		name: req.body.inputName,
+		password: req.body.inputPassword,
+		email: req.body.inputEmail
+	}).then((user) => {
+			req.session.user = user;
+			res.redirect('/profile');
+	});
+});
+
+app.get('/login', (req,res) => {
+	res.render('login')
+});
+
+// profile PAGE
+
+app.get('/profile',(req,res) => {
+  var user = req.session.user
+  res.render('profile',{user: user})
+});
+
+//creating login
+
+app.post('/login', bodyParser.urlencoded({extended:true}),(req,res) => {
+
+  User.findOne({
+    where: {
+      email: req.body.inputEmail
+    }
+  }).then ((user) => {
+    if (user !== undefined && req.body.inputPassword == user.password) {
+      req.session.user = user;
+      res.redirect('/profile');
+    } else{
+        res.redirect('/login?message=' + encodeURIComponent('Invalid email or password'));
+      }
+
+  })
+  .catch( error => {
+      res.redirect('/login?message=' + encodeURIComponent('Invalid email or password'));
+    });
+});
+
+// log out
+
+app.get('/logout',(req,res) =>{
+  req.session.destroy((err) =>{
+    if (err){
+      throw (err);
+    }
+    res.redirect('/?login=' + encodeURIComponent('Logged out successfully'));
+  });
+});
+
+
+app.listen(3000, () => {
+  console.log('App is working on port 3000');
+});

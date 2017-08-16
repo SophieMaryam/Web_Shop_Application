@@ -1,0 +1,17 @@
+html
+  head
+  body
+    if user
+      a(href='/logout') log out
+      br 
+      h1 Welcome,
+      h2= user.name
+      h3= user.email 
+    
+    else
+      h1 Log in or Register at FIRST! 
+      br
+      a(href='/') Register
+      br
+      a(href='/login') Login
+    
