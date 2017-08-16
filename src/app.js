@@ -33,6 +33,10 @@ app.use(session({
 
 }));
 
+app.get('/profile', (req,res) => {
+	res.render('profile')
+});
+
 
 // Contact Page 
 app.get('/contact', (req,res) => {
@@ -46,7 +50,14 @@ app.post('/email', (req,res) => {
 	var sendingto = req.body.to,
 	sentfrom = req.body.from,
 	subject = req.body.subject
-	emailtext = req.body.text;
+	emailcontent = req.body.content,
+	password = req.body.password;
+
+	console.log('sendingto: ' + sendingto);
+	console.log('sendingfrom: ' + sentfrom);
+	console.log('subject: ' + subject);
+	console.log('email content: ' + emailcontent);
+	console.log('password: ' + password);
 
 
 	let transporter = nodemailer.createTransport({
@@ -55,8 +66,8 @@ app.post('/email', (req,res) => {
 		secure: true,
 		service: 'Gmail',
 		auth: {
-			user: 'sophiemaryam@gmail.com',
-			pass: ''
+			user: sentfrom,
+			pass: password
 		},
 		tls: {
 			rejectUnauthorized:false
@@ -67,8 +78,8 @@ app.post('/email', (req,res) => {
 		from:sendingto, 
 		to: sentfrom,
 		subject: subject,
-		text: req.body.text,
-		html: '<b>Hello</b>'
+		text: emailcontent,
+		html: emailcontent
 	};
 
 	transporter.sendMail(mailOptions, (err, info) => {
@@ -76,55 +87,14 @@ app.post('/email', (req,res) => {
 			throw err
 		}
 		console.log('Message %s sent: %s');
-		console.log(info);
-	});
+		console.log('info' + info);
+	})
 
 }) 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// app.use('/sayHello', router);
-// router.post('/email', handleSayHello);
-// function handleSayHelo(req,res){
-// 	var transporter = nodemailer.createTransport){
-// 	server: 'Gmail',
-// 	auth: {
-// 		user: 'sophiemaryam@gmail.com',
-// 		pass: '3muscatteers'
-// 	}
-// }
-// }
-
-
-
-
 // SERVER
 
-// const server = app.listen(3000, () => {
-// 	console.log("Blog app listening on port: " + server.address().port)
-// });
+const server = app.listen(3000, () => {
+	console.log("Blog app listening on port: " + server.address().port)
+});
