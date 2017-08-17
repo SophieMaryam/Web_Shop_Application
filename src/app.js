@@ -42,6 +42,34 @@ const User = sequelize.define('user',{
 	password: Sequelize.STRING
 });
 
+const Clothes = sequelize.define('clothes',{
+	type: Sequelize.STRING,
+	color: Sequelize.STRING,
+	male: Sequelize.STRING,
+	female: Sequelize.STRING,
+	price: Sequelize.STRING,
+});
+
+const Shoes = sequelize.define('shoes',{
+	name: Sequelize.STRING,
+	url: Sequelize.STRING,
+	male: Sequelize.BOOLEAN,
+	female: Sequelize.BOOLEAN
+});
+
+const Pants = sequelize.define('pants',{
+	name: Sequelize.STRING,
+	url: Sequelize.STRING,
+	male: Sequelize.BOOLEAN,
+	female: Sequelize.BOOLEAN
+});
+
+const Tshirts = sequelize.define('tshirts',{
+	name: Sequelize.STRING,
+	url: Sequelize.STRING,
+	male: Sequelize.BOOLEAN,
+	female: Sequelize.BOOLEAN
+});
 sequelize.sync({force:false})
 
 //rendering register page
