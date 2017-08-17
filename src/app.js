@@ -34,6 +34,13 @@ app.use(session({
 }));
 
 
+// Home page 
+
+app.get('/', (req, res) => {
+	res.render('index')
+});
+
+
 // Contact Page 
 app.get('/contact', (req,res) => {
 	res.render('contact')

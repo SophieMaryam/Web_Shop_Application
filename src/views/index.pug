@@ -1,0 +1,52 @@
+doctype
+html
+	head
+		title Homepage
+		link(rel="stylesheet" href="main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+	body
+		div.allinfo
+			div.header
+				div.nav
+					ul 
+						li 
+							a(href="/login") Login
+						li 
+							a(href="/register") Register
+					form#searchengine(name="form"  method="post" action="/searchengine")
+						input#searchbar(name="search" type="text")
+						button(id="submit" type="submit", value="Submit")
+					div
+			div.container
+				div.containercontent 
+					h1 Introducing all new Ucci
+					button.button(type="button" id="button1") Men
+					button.button(type="button" id="button2") Women
+			div.footer
+				h1 hello
+				h3 hello
+				h4 hello
+				p hskjfhaksdfjklasdjfklasdjfkl;asdjflaksdjfk
+				p afkjskldfjaskdfjalksdjfdjlskdf
+				p jaskldfjas;lkdfjsd
+
+	script(type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js")
+	script(type="https://ajax.googlepis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+	script.
+		$(document).ready(() => {
+			$('#button1').mouseover(() => {
+			$('#button1').css("background-color", "#D3D3D3")
+			});
+
+			$('#button2').mouseover(() => {
+			$('#button2').css("background-color", "#D3D3D3")
+			});
+
+			$('#button1').mouseout(() => {
+			$('#button1').css("background-color", "white")
+			});
+
+			$('#button2').mouseout(() => {
+			$('#button2').css("background-color", "white")
+			});
+		});
