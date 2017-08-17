@@ -34,7 +34,11 @@ app.use(session({
 
 // database
 
-const sequelize = new Sequelize('postgres://account1@localhost/web_shop_application');
+const sequelize = new Sequelize('postgres://account1@localhost/web_shop_application',{
+	define: {
+		timestamps: false
+	}
+});
 
 const User = sequelize.define('user',{
 	name: Sequelize.STRING,
@@ -70,7 +74,7 @@ const Tshirts = sequelize.define('tshirts',{
 	male: Sequelize.BOOLEAN,
 	female: Sequelize.BOOLEAN
 });
-sequelize.sync({force:false})
+sequelize.sync({force:true})
 
 //rendering register page
 app.get('/',(req,res) => {
