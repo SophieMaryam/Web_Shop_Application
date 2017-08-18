@@ -1,0 +1,19 @@
+html
+  head
+  body
+    a(href='/profile') view profile
+    br
+    a(href='/') register
+    
+    h1 All clothes
+    
+    div
+      each item in eachItem
+        p #{item.name}
+        p #{item.price}
+        p #{item.color}
+        p= item.url
+        - var location = item.url
+        img(src=`${location}` style="height:100px; width:300px")
+        
+  

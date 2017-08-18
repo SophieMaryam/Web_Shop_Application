@@ -65,6 +65,15 @@ const Clothes = sequelize.define('clothes',{
 const Wishlist = sequelize.define('wishlist',{
 });
 
+app.post('/searchengine', (req,res) => {
+    var input = req.body.search;
+
+    Clothes.findOne({
+        where: {
+            type:req.body.search
+        }
+    })
+})
 // relationships
 
 User.belongsToMany(Clothes, {through: Wishlist});
@@ -141,6 +150,16 @@ app.get('/search',(req,res) =>{
 	res.render('search')
 });
 
+app.get('/allclothes',(req,res) => {
+
+	Clothes.findAll()
+	.then((eachItem) => {
+		res.render('allclothes',{eachItem: eachItem})
+	})
+	.catch((err) => {
+		console.log(err)
+	});
+});
 
 app.listen(3000, () => {
   console.log('App is working on port 3000');
