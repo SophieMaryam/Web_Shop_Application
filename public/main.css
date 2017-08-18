@@ -202,6 +202,29 @@ a svg rect span{
 
 /*Contact*/
 
+#contactpageimg {
+	background:url('/images/suits.jpeg')center center;
+	background-size:cover;
+	height:300px	;
+	width:100%;
+	top:0;
+	left:0;
+}
+
+#content ul {
+	padding-top:100px;
+}
+
+
+#contacttitle {
+	text-align:center;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+	margin-top:50px;
+}
+
+
 #allcontacts {
 	text-transform: uppercase;
 	font-family: 'Raleway', sans-serif;
@@ -216,25 +239,17 @@ a svg rect span{
 	cursor:pointer;
 }
 
-#emailform {
+#plus {
+	margin-left:200px;
+}
+
+#details{
 	display:none;
 }
 
-#contacttitle {
-	text-align:center;
-	text-transform: uppercase;
-	font-family: 'Raleway', sans-serif;
-	color:black;
-	margin-top:50px;
+#emailform {
+	display:none;
 }
-
-#contactpageimg {
-	background:url('/images/suits.jpeg')center center;
-	background-size:cover;
-	height:300px;
-	width:100%;
-}
-
 
 
 
