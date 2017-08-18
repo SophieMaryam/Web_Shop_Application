@@ -3,10 +3,13 @@ html
   body
     if user
       a(href='/logout') log out
+      a(href='/search') Go to Search
       br 
       h1 Welcome,
       h2= user.name
       h3= user.email 
+      //img.className#IdName(src="https://media.gucci.com/style/DarkGray_Center_0_0_980x980/1487759407/471452_X5S58_4304_001_100_0000_Light-Embroidered-jersey-stirrup-legging.jpg" alt="Image Title")  
+
     
     else
       h1 Log in or Register at FIRST! 
@@ -14,4 +17,5 @@ html
       a(href='/') Register
       br
       a(href='/login') Login
+    
     

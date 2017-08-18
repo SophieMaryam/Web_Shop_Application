@@ -4,11 +4,22 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use('/', bodyParser.urlencoded({extended:true}));
 
+// Sessions
+
+const session = require('express-session');
 // Model Configuration
+
 const Sequelize = require('sequelize');
-const connection = new Sequelize('', '', '', {
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sequelize = new Sequelize('web_shop_application','account1',null,  {
 	host: 'localhost',
-	dialect: 'postgres'
+	dialect: 'postgres',
+	storage: './session.postgres',
+	define: {
+		timestamps: false
+	}
+
 });
 
 // bcrypt
@@ -21,24 +32,19 @@ app.set('view engine', 'pug');
 // CSS PAGE
 app.use(express.static(__dirname + "/../public"));
 
-// Sessions
-
-const session = require('express-session');
 
 
 app.use(session({
 	secret: "This is a secret",
 	resave:false,
-	saveUninitialized: true
+	saveUninitialized: true,
+	store: new SequelizeStore({
+		db: sequelize,
+		checkExpirationInterval: 30 * 60 * 1000,
+		expiration : 24 * 60 * 60 * 1000
+	})
 }));
 
-// database
-
-const sequelize = new Sequelize('postgres://account1@localhost/web_shop_application',{
-	define: {
-		timestamps: false
-	}
-});
 
 const User = sequelize.define('user',{
 	name: Sequelize.STRING,
@@ -48,33 +54,26 @@ const User = sequelize.define('user',{
 
 const Clothes = sequelize.define('clothes',{
 	type: Sequelize.STRING,
+	name: Sequelize.STRING,
 	color: Sequelize.STRING,
-	male: Sequelize.STRING,
-	female: Sequelize.STRING,
-	price: Sequelize.STRING,
-});
-
-const Shoes = sequelize.define('shoes',{
-	name: Sequelize.STRING,
 	url: Sequelize.STRING,
 	male: Sequelize.BOOLEAN,
-	female: Sequelize.BOOLEAN
+	female: Sequelize.BOOLEAN,
+	price: Sequelize.INTEGER
 });
 
-const Pants = sequelize.define('pants',{
-	name: Sequelize.STRING,
-	url: Sequelize.STRING,
-	male: Sequelize.BOOLEAN,
-	female: Sequelize.BOOLEAN
+const Wishlist = sequelize.define('wishlist',{
 });
 
-const Tshirts = sequelize.define('tshirts',{
-	name: Sequelize.STRING,
-	url: Sequelize.STRING,
-	male: Sequelize.BOOLEAN,
-	female: Sequelize.BOOLEAN
-});
-sequelize.sync({force:true})
+// relationships
+
+User.belongsToMany(Clothes, {through: Wishlist});
+Clothes.belongsToMany(User, {through: Wishlist});
+Clothes.belongsTo(Wishlist);
+Wishlist.hasMany(Clothes)
+
+sequelize.sync({force:false});
+
 
 //rendering register page
 app.get('/',(req,res) => {
@@ -136,6 +135,10 @@ app.get('/logout',(req,res) =>{
     }
     res.redirect('/?login=' + encodeURIComponent('Logged out successfully'));
   });
+});
+
+app.get('/search',(req,res) =>{
+	res.render('search')
 });
 
 
