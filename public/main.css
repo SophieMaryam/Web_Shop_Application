@@ -4,16 +4,12 @@ html, body {
 	padding:0;
 }
 
-.content {
-	display:none;
-}
 
 .header {
 	top:0;
 	left:0;
 	width:100%;
-	position:fixed;
-	z-index:1;
+	position:absolute;
 }
 
 .nav ul {
@@ -27,7 +23,6 @@ html, body {
 	float:right;
 	text-transform:uppercase;
 	padding-right:15px;
-	z-index:1000;
 	font-family: 'Raleway', sans-serif;;
 }
 
@@ -47,32 +42,42 @@ html, body {
 
 #searchengine {
 	float:right;
-	margin-top:50px;
+/*	margin-top:30px;*/
+	margin-left:30px;
+	position:absolute;
 }
 
 #searchbar {
-	margin-top:100px;
-	margin-left:100px;
 	background-color:transparent;
-	border:transparent;
+	color: white;
+    resize: none;
+    border-bottom-style:solid white;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+}
+
+#submit {
+	width:30px;
+	height:10px;
 }
 
 .container {
-	background:url('/images/fashionw.jpg') center center fixed;
+	background:url('/images/fashionw.jpg')center center fixed;
 	background-size:cover;
 	-webkit-background-size: cover;
 	-o-background-size: cover;
 	height:1000px;
-	width:auto;
+	width:100%;
 }
 
 .containercontent {
 	color:white;
 	font-family: 'Raleway', sans-serif;
-	/*margin: 0 auto;*/
 	text-align:center;
 	padding-top:300px;
-	text-transform: uppercase;
+	text-transform: uppercase
     
 }
 
@@ -93,7 +98,65 @@ html, body {
 	margin-right:10px;
 	font-family: 'Raleway', sans-serif;
 	cursor:pointer;
+	font-weight:bold;
+	text-transform: uppercase;
+
 }
+
+
+.btn-1 {
+  font-weight: 100;
+  margin-right:50px;
+  color:white;
+  margin-left:40px;
+
+}
+
+#span {
+	text-align:center;
+}
+
+.btn-1 svg {
+  height: 50px;
+  position: absolute;		
+  width:120px;
+  color:white;
+
+}
+
+.btn-1 rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-dasharray: 422, 0;
+}
+
+#button1 {
+	margin-left:10px;
+	margin-top:10px;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+#button2 {
+	text-align:center;
+	text-decoration: none;
+}
+
+
+
+.btn-1:hover {
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.btn-1:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 100;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 
 
 

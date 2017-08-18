@@ -13,15 +13,22 @@ html
 							a(href="/login") Login
 						li 
 							a(href="/register") Register
-					form#searchengine(name="form"  method="post" action="/searchengine")
-						input#searchbar(name="search" type="text")
-						button(id="submit" type="submit", value="Submit")
-					div
+					form#searchengine(name="form"  method="post" action="/searchengine" autocomplete="off")
+						input#searchbar(name="search" type="text" placeholder="Search..." tabindex="0")
 			div.container
 				div.containercontent 
 					h1 Introducing all new Ucci
-					button.button(type="button" id="button1") Men
-					button.button(type="button" id="button2") Women
+					a.btn.btn-1#button1(href='https://www.google.com')
+						svg 
+							rect(x='0', y='0', fill='none', width='100%', height='100%')
+								span#span  Men
+
+					a.btn.btn-1#button2(href='https://www.google.com')
+						svg
+							rect(x='0', y='0', fill='none', width='100%', height='100%') 
+								span#span  Women
+				
+
 			div.footer
 				h1 hello
 				h3 hello
@@ -31,7 +38,6 @@ html
 				p jaskldfjas;lkdfjsd
 
 	script(type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js")
-	script(type="https://ajax.googlepis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
 	script.
 		$(document).ready(() => {
 			$('#button1').mouseover(() => {
@@ -48,5 +54,13 @@ html
 
 			$('#button2').mouseout(() => {
 			$('#button2').css("background-color", "white")
+			});
+
+			$('#searchbar').click(() => {
+			$('#searchbar').css("font-size", "40px")
+			});
+
+			$('#searchbar').click(() => {
+			$('#searchbar').css("margin-top", "100px")
 			});
 		});
