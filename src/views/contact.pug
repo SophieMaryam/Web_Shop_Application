@@ -1,30 +1,48 @@
 doctype
 html
 	head
+		title Contact Us
+		link(rel="stylesheet" href="main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
 	body
-		div#Othercontact
-			h1 Customer Service: +3163733638
-			
+		div#contactpageimg 
+		h1#contacttitle Contact us
+		
+		div#allcontacts
+			div#othercontact
+				h3#contactnumber Customer Service Phone Number & Address 
+					span#plus +
+				p#number +3163733638
+				p#address Koton Street 17, 4431 
 
-		div#Email
-			h1 Email Us!
-			form(action="/email" method="post" name="form")
-				label To: 
-				input(name="to" type="text", placeholder="example@gmail.com")
-				label From: 
-				input(name="from" type="text", placeholder="example@gmail.com")
-				label Subject
-				input(name="subject" type="text", placeholder="Subject")
-				label Content
-				input(name="content" type="text" placeholder="Text..." rows="100", columns="100")
-				label For verification, please insert your email's password. 
-				input(name="password" type="password" placeholder="Email password") 
-				button(type="submit") Submit
+
+			div#Email
+				h1#contactemail Email Us
+				form#emailform(action="/email" method="post" name="form" style="display:none;")
+					label To: 
+					input(name="to" type="text", placeholder="example@gmail.com")
+					label From: 
+					input(name="from" type="text", placeholder="example@gmail.com")
+					label Subject
+					input(name="subject" type="text", placeholder="Subject")
+					label Content
+					input(name="content" type="text" placeholder="Text..." rows="100", columns="100")
+					label For verification, please insert your email's password. 
+					input(name="password" type="password" placeholder="Email password") 
+					button(type="submit") Submit
 
 
 		script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
 		script.
 			$(document).ready(() => {
+				$('#contactnumber').click(function(){
+					$('#number').slideToggle("slow", function(){});
+				});    
+
+				$('#contactemail').click(function(){
+					$('#emailform').slideToggle("slow", function(){});
+				});
+
 				$(".activate-modal").click(function(e){
 					e.preventDefault()
 					$(".modal-wrapper").show()
@@ -35,5 +53,9 @@ html
 					$('.modal-wrapper').hide()
 					$('body').removeClass('modal-on')
 				})
+
+				$('#contactnumber').click(function(){
+					$('#span').html("<span> - </span>");
+				});
 			})
 

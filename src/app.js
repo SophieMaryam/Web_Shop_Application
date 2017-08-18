@@ -40,6 +40,19 @@ app.get('/', (req, res) => {
 	res.render('index')
 });
 
+app.post('/searchengine', (req,res) => {
+	var input = req.body.search;
+
+	Clothes.findOne({
+		where: {
+			type:req.body.search
+		}
+	})
+	.then((clothestype) => {
+		res.render('')
+	})
+})
+
 app.get('/login', (req,res) => {
 	res.render('login')
 });
@@ -68,6 +81,8 @@ app.get('/contact', (req,res) => {
 
 
 // Nodemailer
+// Note: For nodemailer to work, click on this url https://www.google.com/settings/security/lesssecureapps, turn on the access to third party apps
+// This url will redirect you to your browser settings 
 
 app.post('/email', (req,res) => {
 	var sendingto = req.body.to,

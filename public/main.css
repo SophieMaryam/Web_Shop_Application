@@ -193,11 +193,46 @@ a svg rect span{
 /* LOGIN */
 
 #loginheader {
-	
+
 }
 
 #login {
 	text-align:center;
+}
+
+/*Contact*/
+
+#allcontacts {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+#othercontact {
+	margin-top:100px;
+	margin-left:400px;
+}
+
+#contactnumber {
+	cursor:pointer;
+}
+
+#emailform {
+	display:none;
+}
+
+#contacttitle {
+	text-align:center;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+	margin-top:50px;
+}
+
+#contactpageimg {
+	background:url('/images/suits.jpeg')center center;
+	background-size:cover;
+	height:300px;
+	width:100%;
 }
 
 
