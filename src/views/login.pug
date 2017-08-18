@@ -1,0 +1,20 @@
+doctype
+html
+	head
+		title Login 
+	body
+		h1 Join the Ucci Community 
+		div#login
+			form(name="form" method="post" action="/bloglogin" id="form") 
+				h2 	Login
+				br
+				br
+				label Email:
+				input#username(type="text" name="email" placeholder="email")
+				br
+				label Password:
+				input#password(type="password" name="password" placeholder="password")
+				br
+				input(type="checkbox" name="checkbox") 
+				br
+				button(type="submit").btn.amber.lighten-2.waves-effect.waves-light.black-text Submit 

@@ -40,12 +40,9 @@ app.get('/', (req, res) => {
 	res.render('index')
 });
 
-
-// Contact Page 
-app.get('/contact', (req,res) => {
-	res.render('contact')
+app.get('/login', (req,res) => {
+	res.render('login')
 });
-
 
 app.get('/profile', (req, res) => {
 	res.render('profile')
@@ -61,6 +58,12 @@ app.get('/profile', (req, res) => {
 			user:user
 		});
 	}
+});
+
+
+// Contact Page 
+app.get('/contact', (req,res) => {
+	res.render('contact')
 });
 
 
