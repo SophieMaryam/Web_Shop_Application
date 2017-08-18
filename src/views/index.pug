@@ -4,6 +4,7 @@ html
 		title Homepage
 		link(rel="stylesheet" href="main.css" type="text/css")
 		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+		link(rel="stylesheet" href="animate.min.css")
 	body
 		div.allinfo
 			div.header
@@ -30,37 +31,40 @@ html
 				
 
 			div.footer
-				h1 hello
-				h3 hello
-				h4 hello
-				p hskjfhaksdfjklasdjfklasdjfkl;asdjflaksdjfk
-				p afkjskldfjaskdfjalksdjfdjlskdf
-				p jaskldfjas;lkdfjsd
+				p#one
+					| Be part of the world of 
+					span#demo Fashion | Beauty | Ucci
+					| 
+				ul
+					li
+						a(href="https://www.facebook.com") Facebook
+					li
+						a(href="https://www.instagram.com") Instagram
+					li
+						a(href="https://www.twitter.com") Twitter
+					li
+						a(href="https://www.pinterest.com") Pinterest 
 
-	script(type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js")
+				p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
+
+	script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
+	script(src="js/jQuery.cycleText.js")
 	script.
 		$(document).ready(() => {
-			$('#button1').mouseover(() => {
-			$('#button1').css("background-color", "#D3D3D3")
-			});
-
-			$('#button2').mouseover(() => {
-			$('#button2').css("background-color", "#D3D3D3")
-			});
-
-			$('#button1').mouseout(() => {
-			$('#button1').css("background-color", "white")
-			});
-
-			$('#button2').mouseout(() => {
-			$('#button2').css("background-color", "white")
-			});
-
 			$('#searchbar').click(() => {
 			$('#searchbar').css("font-size", "40px")
 			});
 
 			$('#searchbar').click(() => {
 			$('#searchbar').css("margin-top", "100px")
+			});
+
+			$('#demo').cycleText();
+			$('#demo').cycleText('pause');
+			$('#demo').cycleText('resume');
+			$('#demo').cycleText({
+				separator: '|',
+				animation: 'flipInX',
+				interval: 2000
 			});
 		});
