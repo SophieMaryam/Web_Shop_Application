@@ -11,11 +11,15 @@ html, body {
 	width:100%;
 	position:absolute;
 }
+.nav {
+	text-align:center;
+	margin-left:10px;
+}
 
 .nav ul {
 	color:black;
 	list-style-type: none;
-	margin-right:50px; 
+	text-align:center;
 }
 
 .nav li {
@@ -67,7 +71,7 @@ html, body {
 	background-size:cover;
 	-webkit-background-size: cover;
 	-o-background-size: cover;
-	height:1000px;
+	height:900px;
 	width:100%;
 }
 
@@ -94,9 +98,6 @@ html, body {
 
 }
 
-#span {
-	text-align:center;
-}
 
 .btn-1 svg {
   height: 50px;
@@ -114,16 +115,11 @@ html, body {
 
 #button1 {
 	text-decoration: none;
+	padding-left:10px;
 }
 
 #button2 {
 	text-decoration: none;
-}
-
-a svg rect span{
-	margin: 0 auto;
-	text-align: center;
-	padding-right: 10px;
 }
 
 .btn-1:hover {
@@ -155,7 +151,7 @@ a svg rect span{
 .footer ul {
 	text-decoration: none;
 	margin-top:100px;
-	margin-left:400px;
+	margin-left:450px;
 }
 
 .footer a:-webkit-any-link{
@@ -202,6 +198,10 @@ a svg rect span{
 
 /*Contact*/
 
+#contactbody {
+	background-color:#FFFAF0
+}
+
 #contactpageimg {
 	background:url('/images/suits.jpeg')center center;
 	background-size:cover;
@@ -216,7 +216,7 @@ a svg rect span{
 }
 
 
-#contacttitle {
+.contacttitles {
 	text-align:center;
 	text-transform: uppercase;
 	font-family: 'Raleway', sans-serif;
@@ -224,10 +224,23 @@ a svg rect span{
 	margin-top:50px;
 }
 
+#para {
+	font-size:15px;
+}
+
+.customerservice {
+	margin-left:400px;
+}
+
+#openinghours {
+	font-size:10px;
+}
+
 
 #allcontacts {
 	text-transform: uppercase;
 	font-family: 'Raleway', sans-serif;
+	margin-top:100px;
 }
 
 #othercontact {
@@ -240,16 +253,75 @@ a svg rect span{
 }
 
 #plus {
-	margin-left:200px;
+	margin-left:410px;
 }
 
-#details{
+#details {
 	display:none;
+}
+
+#hr {
+	margin-right:350px;
+	margin-left:390px;
+}
+
+#contactaddress {
+	cursor:pointer;
+}
+
+#address {
+	display:none;
+}
+
+#plus1 {
+	margin-left:450px;
+}
+
+
+#contactemail {
+	cursor:pointer;
 }
 
 #emailform {
 	display:none;
+	font-family: 'Raleway', sans-serif;
 }
+
+#plus2 {
+	margin-left:668px;
+}
+
+#hrcontact {
+	margin-top:100px;
+}
+
+#input {
+	margin-left:54px;
+}
+#input1 {
+	margin-left:30px;
+}
+
+#input2 {
+	margin-left:12px;
+}
+
+#textspace {
+	width:740px;
+	height:160px;
+	font-family: 'Raleway', sans-serif;
+	resize:none;
+}
+
+#inputpw {
+	margin-left:10px;
+}
+
+#submit {
+
+}
+
+
 
 
 
