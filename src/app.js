@@ -82,16 +82,14 @@ app.get('/contact', (req,res) => {
 
 // Nodemailer
 // Note: For nodemailer to work, click on this url https://www.google.com/settings/security/lesssecureapps, turn on the access to third party apps
-// This url will redirect you to your browser settings 
+// This url will redirect you to your browser settings
 
 app.post('/email', (req,res) => {
-	var sendingto = req.body.to,
-	sentfrom = req.body.from,
+	var sentfrom = req.body.from,
 	subject = req.body.subject
 	emailcontent = req.body.content,
 	password = req.body.password;
 
-	console.log('sendingto: ' + sendingto);
 	console.log('sendingfrom: ' + sentfrom);
 	console.log('subject: ' + subject);
 	console.log('email content: ' + emailcontent);
@@ -113,7 +111,7 @@ app.post('/email', (req,res) => {
 	});
 
 	let mailOptions = {
-		from:sendingto, 
+		from:'sophiemaryam@gmail.com', 
 		to: sentfrom,
 		subject: subject,
 		text: emailcontent,
