@@ -188,12 +188,94 @@ html, body {
 
 /* LOGIN */
 
-#loginheader {
+#loginbody {
+	background-color:#FFFAF0
+}
 
+#loginheader {
+	margin-left:100px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+	margin-top:90px;
 }
 
 #login {
 	text-align:center;
+	margin-top:150px;
+	margin-left:100px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+}
+
+#fashionlogin {
+	float:left;
+	height:710px;
+	width:500px;
+	top:0;
+	left:0;
+	position:absolute;
+}
+
+.navlogin {
+	text-align:center;
+	margin-left:10px;
+}
+
+.navlogin ul {
+	color:black;
+	list-style-type: none;
+	text-align:center;
+	margin-right:10px;
+}
+
+.navlogin li {
+	display:inline;
+	float:right;
+	text-transform:uppercase;
+	padding-right:15px;
+	font-family: 'Raleway', sans-serif;;
+}
+
+.navlogin a:-webkit-any-link{
+	color:black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.navlogin a:hover {
+	color: #808080;
+}
+
+.navlogin a:linked{
+	color:black;
+}
+
+#username {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom-style:solid black;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+   	margin-left:50px	;
+}
+
+#password {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom-style:solid #FFFAF0;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+    margin-left:10px;
+}
 }
 
 /*Contact*/
@@ -388,9 +470,13 @@ html, body {
 	font-family: 'Raleway', sans-serif;
 }
 
-#mainbar h2 {
+#mainbar h2 {	
 	color:white;
 	background-color:black;
+}
+
+#mainbar h3 {
+
 }
 
 
@@ -411,6 +497,44 @@ html, body {
     border-right:none;
     outline:none;
     font-size:20px;
+}
+
+.footerprofile {
+	margin-top:300px;
+}
+
+.footerprofile li {
+	display:inline;
+	padding-left:40px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+.footerprofile ul {
+	text-decoration: none;
+	margin-left:450px;
+}
+
+.footerprofile a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.footerprofile a:hover {
+	color:#4286f4;
+}
+
+.footerprofile a:linked{
+	color:black;
+}
+
+.footerprofile #two {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+	margin-top:100px;
+	font-size:10px;
 }
 
 

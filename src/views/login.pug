@@ -2,7 +2,19 @@ doctype
 html
 	head
 		title Login 
-	body
+		link(rel="stylesheet" href="main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+	body#loginbody
+		img#fashionlogin(src="/images/loginfashion.jpeg")
+		div.header
+			div.navlogin
+				ul 
+					li 
+						a(href="/contact") Contact
+					li 
+						a(href="/allclothes") Go Shopping
+					li 
+						a(href="/") Home
 		h1#loginheader Join the Ucci Community 
 		div#login
 			form(name="form" method="post" action="/bloglogin" id="form") 
@@ -10,11 +22,11 @@ html
 				br
 				br
 				label Email:
-				input#username(type="text" name="email" placeholder="email")
+				input#username(type="text" name="email" placeholder="email@gmail")
+				br
 				br
 				label Password:
-				input#password(type="password" name="password" placeholder="password")
+				input#password(type="password" name="password" placeholder="Password")
 				br
-				input(type="checkbox" name="checkbox") 
 				br
 				button(type="submit").btn.amber.lighten-2.waves-effect.waves-light.black-text Submit 
