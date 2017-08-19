@@ -189,7 +189,7 @@ html, body {
 /* LOGIN */
 
 #loginbody {
-	background-color:#FFFAF0
+	background-color:#faf8f5;
 }
 
 #loginheader {
@@ -199,15 +199,6 @@ html, body {
 	font-family: 'Raleway', sans-serif;
 	color:black;
 	margin-top:90px;
-}
-
-#login {
-	text-align:center;
-	margin-top:150px;
-	margin-left:100px;
-	text-transform: uppercase;
-	font-family: 'Raleway', sans-serif;
-	color:black;
 }
 
 #fashionlogin {
@@ -253,30 +244,80 @@ html, body {
 	color:black;
 }
 
+
+#login {
+	text-align:center;
+	margin-top:150px;
+	margin-left:200px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+}
+
+#titlelogin {
+	margin-left:270px;
+}
+
+#emaillogin {
+	margin-left:329px;
+}
+
 #username {
 	background-color:transparent;
 	color: black;
     resize: none;
-    border-bottom-style:solid black;
+    border-bottom:1px solid #595959;
     border-top:none;
     border-left: none;
     border-right:none;
     outline:none;
-   	margin-left:50px	;
+    margin-left:50px;
+   	width:200px;
+
+}
+
+#passwordlogin {
+	
 }
 
 #password {
 	background-color:transparent;
 	color: black;
     resize: none;
-    border-bottom-style:solid #FFFAF0;
+    border-bottom:1px solid  #595959;
     border-top:none;
     border-left: none;
     border-right:none;
     outline:none;
     margin-left:10px;
+    width:200px;
 }
+
+#logreg {
+	display:inline;
+	overflow:hidden;
 }
+
+#submitbutton {
+	background-color:black;
+	color:white;
+	border:none;
+	width:100px;
+	height:40px;
+	font-size:15px;
+
+}
+
+#goregister {
+	color:black;
+	float:right;
+	margin-right:50px;
+	display:inline;
+	margin-top:200px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
 
 /*Contact*/
 
@@ -452,7 +493,6 @@ html, body {
 }
 
 #profilecontent {
-/*	width:500px;*/
 	overflow:hidden;
 	margin-top:100px;
 	padding-left:50px;

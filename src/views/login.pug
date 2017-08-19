@@ -16,17 +16,38 @@ html
 					li 
 						a(href="/") Home
 		h1#loginheader Join the Ucci Community 
-		div#login
-			form(name="form" method="post" action="/bloglogin" id="form") 
-				h2 	Login
-				br
-				br
-				label Email:
-				input#username(type="text" name="email" placeholder="email@gmail")
-				br
-				br
-				label Password:
-				input#password(type="password" name="password" placeholder="Password")
-				br
-				br
-				button(type="submit").btn.amber.lighten-2.waves-effect.waves-light.black-text Submit 
+		div#logreg
+			div#goregister
+				h3 Not a user yet? 
+					a(href="/register") Register
+						span here
+			div#login
+				form(name="form" method="post" action="/bloglogin" id="form") 
+					h2#titlelogin 	Login
+					br
+					br
+					label#emaillogin Email:
+					input#username(type="text" name="email" placeholder="email@gmail")
+					br
+					br
+					br
+					label Password:
+					input#password(type="password" name="password" placeholder="Password")
+					br
+					br
+					br
+					button#submitbutton(type="submit") Submit 
+
+			
+		script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
+		script.
+			$(document).ready(() => {
+				$('#submitbutton').hover(() => {
+				$('#submitbutton').css("background-color", "#262626")
+			});
+
+				$('#submitbutton').mouseleave(() => {
+				$('#submitbutton').css("background-color", "black")
+			})
+
+			});
