@@ -211,8 +211,14 @@ html, body {
 	left:0;
 }
 
-#content ul {
-	padding-top:100px;
+#content {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:white;
+	padding-left:30px;
+	padding-top:45px;
+	font-size:40px;
+	text-shadow: 1.3px 1.3px black;
 }
 
 
