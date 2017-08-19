@@ -2,29 +2,36 @@ doctype
 html 
 	head
 		title Profile 
-		link(href="path/to/lightbox.css" rel="stylesheet")
+		link(rel="stylesheet" href="../main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
 	body
-		h5 username:
-			//- h6 #{user.name}
-		h5 Email: 
-			//- h6 #{user.email}
-		
-		form(action="/email" method="post" name="form")
-			label To: 
-			input(name="to" type="text", placeholder="example@gmail.com")
-			label From: 
-			input(name="from" type="text", placeholder="example@gmail.com")
-			label Subject
-			input(name="subject" type="text", placeholder="Subject")
-			label Content
-			input(name="content" type="text" placeholder="Text..." rows="100", columns="100")
-			label For verification, please insert your email's password. 
-			input(name="password" type="password" placeholder="Email password") 
-			button(type="submit") Submit
+		div.header
+			div.nav1
+				ul 
+					li#top Ucci
+					li 
+						a(href="/") Home
+					li 
+						a(href="/contact") Contact
+					li 
+						a(href="/allclothes") Go Shopping
+					br
+					li
+						form#searchengine(name="form"  method="post" action="/searchengine" autocomplete="off")
+							input#searchbar1(name="search" type="text" placeholder="Search..." tabindex="0")
+		div#profilecontent
+			div#sidebar
+				br
+				br
+				br
+				br
+				h5 username:
+					h6 U
+				h5 Email: 
+					//- h6 #{user.email}
+			div#mainbar
+				h2 Welcome, Username, to your Ucci Profile
 
-
-
-	script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-	script.
+			
 
 

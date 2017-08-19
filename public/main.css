@@ -327,6 +327,94 @@ html, body {
 
 }
 
+/* Profile*/
+
+.nav1 {
+	margin-left:10px;
+}
+
+.nav1 ul {
+	color:black;
+	list-style-type: none;
+}
+
+.nav1 li {
+	display:inline;
+	float:right;
+	text-transform:uppercase;
+	padding-right:15px;
+	font-family: 'Raleway', sans-serif;;
+}
+
+.nav1 a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.nav1 a:hover {
+	color: pink;
+}
+
+.nav1 a:linked{
+	color:black;
+}
+
+.nav1 #top {
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	color:black;
+	float:left;
+	font-weight:bold;
+	font-size:40px;
+}
+
+#profilecontent {
+/*	width:500px;*/
+	overflow:hidden;
+	margin-top:100px;
+	padding-left:50px;
+}
+
+#sidebar {
+	width:300px;
+	font-family: 'Raleway', sans-serif;
+	float:left;	
+
+}
+
+#mainbar {
+	margin-left:200px; /* Width of the content */
+	background-color:black;
+	color:white;
+	font-family: 'Raleway', sans-serif;
+}
+
+#mainbar h1 {
+	text-align:center;
+	color:white;
+}
+
+
+#searchengine {
+	float:right;
+	margin-left:15px;
+	position:absolute;
+	margin-top:40px;
+}
+
+#searchbar1 {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom-style:solid black;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+    font-size:20px;
+}
+
 
 
 

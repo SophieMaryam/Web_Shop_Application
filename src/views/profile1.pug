@@ -1,0 +1,19 @@
+html
+	head
+		title Profile
+		link(rel="stylesheet" href="main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+		link(rel="stylesheet" href="animate.min.css")
+	body
+		div.allinfo
+			div.header
+				div.nav
+					ul 
+						li 
+							a(href="/contact") Contact
+						li 
+							a(href="/register") Register
+						li 
+							a(href="/login") Login
+					form#searchengine(name="form"  method="post" action="/searchengine" autocomplete="off")
+						input#searchbar(name="search" type="text" placeholder="Search..." tabindex="0")

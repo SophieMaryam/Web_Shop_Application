@@ -59,18 +59,18 @@ app.get('/login', (req,res) => {
 
 app.get('/profile', (req, res) => {
 	res.render('profile')
-	var user = req.session.user;
-	if(!user){
-		res.redirect('/?message=' + encodeURIComponent("Please log in."));
-	}
+	// var user = req.session.user;
+	// if(!user){
+	// 	res.redirect('/?message=' + encodeURIComponent("Please log in."));
+	// }
 
-	if(user === undefined){
-		res.redirect('/?message=' + encodeURIComponent("Please log in to view your profile."));
-	} else {
-		res.render('profile', {
-			user:user
-		});
-	}
+	// if(user === undefined){
+	// 	res.redirect('/?message=' + encodeURIComponent("Please log in to view your profile."));
+	// } else {
+	// 	res.render('profile', {
+	// 		user:user
+	// 	});
+	// }
 });
 
 
