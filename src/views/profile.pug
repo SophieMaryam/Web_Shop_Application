@@ -27,43 +27,55 @@ html
 				br
 				br
 				br
-				h5 username:
+				h5 Username:
 				h6 Username
 				h5 Email: 
 				h6 Email
 			div#mainbar
 				h2 Welcome, Username, to your Ucci Profile
 				div#paypal-button
+		div.foote
+			ul
+				li
+					a(href="https://www.facebook.com") Facebook
+				li
+					a(href="https://www.instagram.com") Instagram
+				li
+					a(href="https://www.twitter.com") Twitter
+				li
+					a(href="https://www.pinterest.com") Pinterest 
 
-		//- script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
+			p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
+
+				//- script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
 		script.
 			//- $(document).ready(() => {
 				paypal.Button.render({
-					env: 'sandbox', // Or 'sandbox',
+					env: 'sandbox', 
 					client: {
-						sandbox:'AYyck9mdvGmSgiLth8GfTkGPQ4ideflMi3fDFwkw2nOaB2vBLfMQKxQ-y4NBps1cPVJ_rhEsvGk9zaUn',
+						sandbox:'AFcWxV21C7fd0v3bYYYRCpSSRl31AhCOxSeW8-a1RL2.s0zpAd5eEPB0',
 						production:'AeU35S07Q28V9uJqape6W4ki3GkhfAKEmequRYSFEx-6lskqqBtrWJwsawY6jDSRWahdGykAQGTd0r6G'
 					},
 					commit: true, // Show a 'Pay Now' button
-					payment: (data, actions) => {
+					payment:function(data, actions) {
 						return actions.payment.create({
 							payment: {
 								transactions: [
 									{
-										amount: {total: '10.00', currency: 'EUR'}
+										amount: {total: '10.00', currency: 'USD'}
 									}
 								]
 							}
 						});
 					},
 				onAuthorize: function(data, actions) {
-					return actions.payment.execute().then(function(payment) {
-
+					return actions.payment.execute().then((payment) => {
+						window.alert('Payment Complete!');
 					});
 				}
 			}, '#paypal-button');
 
-			//- });
+					//- });
 
 			
 
