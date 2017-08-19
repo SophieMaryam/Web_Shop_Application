@@ -37,7 +37,7 @@ html, body {
 }
 
 .nav a:hover {
-	color: pink;
+	color: #808080;
 }
 
 .nav a:linked{
@@ -90,9 +90,8 @@ html, body {
 }	
 
 .btn-1 {
-  font-weight: 100;
-  margin-right:60px;
-  margin-left:40px;
+  margin-right:70px;
+  margin-left:30px;
   color:white;
   background-color:none;
 
@@ -101,12 +100,11 @@ html, body {
 
 .btn-1 svg {
   height: 50px;
-  position: absolute;		
+  position:absolute;		
   width:120px;
 }
 
 .btn-1 rect {
-  fill: none;
   stroke: #fff;
   stroke-width: 4;
   stroke-dasharray: 422, 0;
@@ -120,6 +118,7 @@ html, body {
 
 #button2 {
 	text-decoration: none;
+	padding-right:10px;
 }
 
 .btn-1:hover {
@@ -132,6 +131,10 @@ html, body {
   stroke-dasharray: 15, 310;
   stroke-dashoffset: 100;
   transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#span1 {
+	margin-left:5px;
 }
 
 .footer h1 {
@@ -179,11 +182,10 @@ html, body {
 
 .footer #one {
 	text-transform: uppercase;
-	font-family: 'Raleway', sans-serif;
+	font-family:'Raleway', sans-serif;
 	text-align:center;
 	margin-top:100px;
 	font-size:40px;
-
 }
 
 /* LOGIN */
@@ -192,18 +194,9 @@ html, body {
 	background-color:#faf8f5;
 }
 
-#loginheader {
-	margin-left:100px;
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'Raleway', sans-serif;
-	color:black;
-	margin-top:90px;
-}
-
 #fashionlogin {
 	float:left;
-	height:710px;
+	height:762px;
 	width:500px;
 	top:0;
 	left:0;
@@ -244,25 +237,34 @@ html, body {
 	color:black;
 }
 
+#loginheader {
+	margin-left:170px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+	margin-top:90px;
+}
+
 
 #login {
 	text-align:center;
-	margin-top:150px;
-	margin-left:200px;
+	margin-top:80px;
+	margin-left:120px;
 	text-transform: uppercase;
 	font-family: 'Raleway', sans-serif;
 	color:black;
 }
 
-#titlelogin {
-	margin-left:270px;
+#logintitle {
+	margin-left:50px;
 }
 
-#emaillogin {
-	margin-left:329px;
+#loginemail {
+	margin-right:98px;
 }
 
-#username {
+#inputlogemail {
 	background-color:transparent;
 	color: black;
     resize: none;
@@ -271,16 +273,15 @@ html, body {
     border-left: none;
     border-right:none;
     outline:none;
-    margin-left:50px;
+    margin-left:52px;
    	width:200px;
-
 }
 
-#passwordlogin {
-	
+#loginpassword {
+	margin-right:57px;
 }
 
-#password {
+#inputlogpassword {
 	background-color:transparent;
 	color: black;
     resize: none;
@@ -288,14 +289,9 @@ html, body {
     border-top:none;
     border-left: none;
     border-right:none;
-    outline:none;
-    margin-left:10px;
+    outline:none;		
     width:200px;
-}
-
-#logreg {
-	display:inline;
-	overflow:hidden;
+    margin-left:52px;	
 }
 
 #submitbutton {
@@ -305,24 +301,280 @@ html, body {
 	width:100px;
 	height:40px;
 	font-size:15px;
-
+	margin-left:50px;
 }
 
 #goregister {
 	color:black;
 	float:right;
-	margin-right:50px;
+	margin-right:550px;
 	display:inline;
-	margin-top:200px;
+	margin-top:60px;
 	text-transform: uppercase;
 	font-family: 'Raleway', sans-serif;
 }
 
+#goregister a:-webkit-any-link{
+	color:black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+#goregister a:hover {
+	color: #808080;
+}
+
+#goregister a:linked{
+	color:black;
+}
+
+#hrlogin {
+	margin-top:250px;
+}
+
+.footerlogin {
+	margin-top:100px;
+}
+
+.footerlogin li {
+	display:inline;
+	padding-left:40px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+.footerlogin ul {
+	text-decoration: none;
+	margin-left:450px;
+}
+
+.footerlogin a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.footerlogin a:hover {
+	color:#4286f4;
+}
+
+.footerlogin a:linked{
+	color:black;
+}
+
+.footerlogin #two {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+	margin-top:100px;
+	font-size:10px;
+}
+
+/*Register*/
+
+#fashionregister {
+	float:right;
+	height:767px;
+	width:500px;
+	top:0;
+	right:0;
+	position:absolute;
+}
+
+.headerreg {
+	top:0;
+	right:0;
+	width:100%;
+	position:absolute;
+}
+
+
+.navregister ul {
+	color:black;
+	list-style-type:none;
+}
+
+.navregister li {
+	display:inline;
+	text-transform:uppercase;
+	padding-right:15px;
+	font-family: 'Raleway', sans-serif;	
+}
+
+.navregister a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.navregister a:hover {
+	color: #808080;
+}
+
+.navregister a:linked{
+	color:black;
+}
+
+#registerheader {
+	text-align:center;
+	margin-right:300px;
+	font-family: 'Raleway', sans-serif;	
+	text-transform:uppercase;
+	margin-top:100px;
+}
+
+#register {
+	text-align:center;
+	margin-right:350px;
+	text-align:center;
+	margin-top:80px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+}
+
+#registertitle {
+	margin-left:60px;
+}
+
+#registerfirstname {
+	margin-right:95px;
+}
+
+#inputname {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom:1px solid #595959;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+    margin-left:60px;
+   	width:251px;
+}
+
+#registerlastname {
+	margin-right:95px;
+}
+
+#inputlastname {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom:1px solid #595959;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+    margin-left:60px;
+   	width:251px;
+}
+
+#registeremail {
+	margin-right:140px;
+}
+
+#inputregemail {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom:1px solid #595959;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+    margin-left:60px;
+   	width:251px;
+}
+
+#accounttype {
+	color:grey;
+	font-size:10px;
+	margin-right:52px;
+}
+
+#registerpassword {
+	margin-right:100px;
+}
+
+#inputregpassword {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom:1px solid  #595959;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;		
+    width:251px;
+    margin-left:60px;	
+}
+
+#characterlength {
+	color:grey;
+	font-size:10px;
+	margin-left:60px;
+}
+
+#submitbtn {
+	background-color:black;
+	color:white;
+	border:none;
+	width:100px;
+	height:40px;
+	font-size:15px;
+	margin-left:70px;
+}
+
+#hrregister {
+	margin-top:100px;
+}
+
+.footerregister{
+	margin-top:100px;
+}
+
+.footerregister li {
+	display:inline;
+	padding-left:40px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+.footerregister ul {
+	text-decoration: none;
+	margin-left:450px;
+}
+
+.footerregister a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.footerregister a:hover {
+	color:#4286f4;
+}
+
+.footerregister a:linked{
+	color:black;
+}
+
+.footerregister #two {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+	margin-top:100px;
+	font-size:10px;
+}
 
 /*Contact*/
 
 #contactbody {
-	background-color:#FFFAF0
+	background-color:#FFFAF0;
+	text-transform:uppercase;
+	font-family: 'Raleway', sans-serif;
 }
 
 #contactpageimg {

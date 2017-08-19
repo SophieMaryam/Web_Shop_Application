@@ -53,10 +53,18 @@ app.post('/searchengine', (req,res) => {
 	})
 })
 
+// Login page
 app.get('/login', (req,res) => {
 	res.render('login')
 });
 
+// Register page
+
+app.get('/register', (req,res) => {
+	res.render('register')
+})
+
+// Profile page
 app.get('/profile', (req, res) => {
 	res.render('profile')
 	// var user = req.session.user;

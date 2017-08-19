@@ -1,0 +1,72 @@
+doctype
+html
+	head
+		title Register 
+		link(rel="stylesheet" href="main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+	body#loginbody
+		img#fashionregister(src="/images/fashionregister.jpeg")
+		div.headerreg
+			div.navregister
+				ul 
+					li 
+						a(href="/") Home
+					li 
+						a(href="/allclothes") Go Shopping	
+					li 
+						a(href="/contact") Contact
+		h1#registerheader Join the Ucci Community 
+		div#reglog
+			div#register
+				form(name="form" method="post" action="/bloglogin" id="form") 
+					h2#registertitle Register
+					br
+					br
+					label#registerfirstname First Name:
+					br
+					input#inputname(type="text" name="email")
+					br
+					br
+					label#registerlastname Last Name: 
+					br
+					input#inputname(type="text" name="email" placeholder="")
+					br
+					br
+					label#registeremail Email:
+					br
+					input#inputregemail(type="text" name="email")
+					p#accounttype Must be a gmail account.
+					br
+					label#registerpassword password:
+					br
+					input#inputregpassword(type="password" name="password")
+					p#characterlength Password must be longer than 8 characters.
+					br
+					br
+					button#submitbtn(type="submit") Submit 
+		hr#hrregister
+		div.footerregister
+				ul
+					li
+						a(href="https://www.facebook.com") Facebook
+					li
+						a(href="https://www.instagram.com") Instagram
+					li
+						a(href="https://www.twitter.com") Twitter
+					li
+						a(href="https://www.pinterest.com") Pinterest 
+
+				p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
+			
+		script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
+		script.
+			$(document).ready(() => {
+				$('#submitbtn').hover(() => {
+				$('#submitbtn').css("background-color", "#262626")
+			});
+
+				$('#submitbtn').mouseleave(() => {
+				$('#submitbtn').css("background-color", "black")
+			})
+
+			});

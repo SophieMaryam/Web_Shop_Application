@@ -15,29 +15,43 @@ html
 						a(href="/allclothes") Go Shopping
 					li 
 						a(href="/") Home
-		h1#loginheader Join the Ucci Community 
-		div#logreg
-			div#goregister
-				h3 Not a user yet? 
-					a(href="/register") Register
-						span here
+		h1#loginheader Welcome Back 
+		div
 			div#login
 				form(name="form" method="post" action="/bloglogin" id="form") 
-					h2#titlelogin 	Login
+					h2#logintitle 	Login
 					br
 					br
-					label#emaillogin Email:
-					input#username(type="text" name="email" placeholder="email@gmail")
+					label#loginemail Email:
 					br
-					br
-					br
-					label Password:
-					input#password(type="password" name="password" placeholder="Password")
+					input#inputlogemail(type="text" name="email" placeholder="email@gmail")
 					br
 					br
 					br
-					button#submitbutton(type="submit") Submit 
+					label#loginpassword Password:
+					br
+					input#inputlogpassword(type="password" name="password" placeholder="Password")
+					br
+					br
+					br
+					br
+					button#submitbutton(type="submit") Submit 	
+				div#goregister
+					h4 Not a user yet? 
+						a(href="/register") Register here
+		hr#hrlogin
+		div.footerlogin
+				ul
+					li
+						a(href="https://www.facebook.com") Facebook
+					li
+						a(href="https://www.instagram.com") Instagram
+					li
+						a(href="https://www.twitter.com") Twitter
+					li
+						a(href="https://www.pinterest.com") Pinterest 
 
+				p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
 			
 		script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
 		script.
