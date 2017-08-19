@@ -81,6 +81,12 @@ app.get('/profile', (req, res) => {
 	// }
 });
 
+// All Clothes
+
+app.get('/allclothes', (req,res) => {
+	res.render('allclothes');
+})
+
 
 // Contact Page 
 app.get('/contact', (req,res) => {

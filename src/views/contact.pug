@@ -60,7 +60,7 @@ html
 					input#inputpw(name="password" type="password" placeholder="Email password" rows="10" columns="300") 
 					br
 					br
-					button(type="submit") Submit
+					button#contactsubmit(type="submit") Submit
 			hr#hrcontact
 			div.footer
 				ul
@@ -130,5 +130,13 @@ html
 					$('#plus2').html("+");
 				}
 				});
+
+				$('#contactsubmit ').hover(() => {
+					$('#contactsubmit ').css("background-color", "#262626")
+				});
+
+				$('#contactsubmit ').mouseleave(() => {
+					$('#contactsubmit').css("background-color", "black")
+				})
 			});
 

@@ -48,36 +48,40 @@ html
 
 			p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
 
-				//- script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
 		script.
-			//- $(document).ready(() => {
-				paypal.Button.render({
-					env: 'sandbox', 
-					client: {
-						sandbox:'AFcWxV21C7fd0v3bYYYRCpSSRl31AhCOxSeW8-a1RL2.s0zpAd5eEPB0',
-						production:'AeU35S07Q28V9uJqape6W4ki3GkhfAKEmequRYSFEx-6lskqqBtrWJwsawY6jDSRWahdGykAQGTd0r6G'
-					},
-					commit: true, // Show a 'Pay Now' button
-					payment:function(data, actions) {
-						return actions.payment.create({
-							payment: {
-								transactions: [
-									{
-										amount: {total: '10.00', currency: 'USD'}
-									}
-								]
-							}
-						});
-					},
-				onAuthorize: function(data, actions) {
-					return actions.payment.execute().then((payment) => {
-						window.alert('Payment Complete!');
+			paypal.Button.render({
+				env: 'sandbox', 
+				 // PayPal Client IDs - replace with your own
+				// Create a PayPal app: https://developer.paypal.com/developer/applications/create
+				client: {
+					sandbox:'AFcWxV21C7fd0v3bYYYRCpSSRl31AhCOxSeW8-a1RL2.s0zpAd5eEPB0',
+					production:'AeU35S07Q28V9uJqape6W4ki3GkhfAKEmequRYSFEx-6lskqqBtrWJwsawY6jDSRWahdGykAQGTd0r6G'
+					 // Show the buyer a 'Pay Now' button in the checkout flow
+				},
+				commit: true, // Show a 'Pay Now' button
+				// payment() is called when the button is clicked
+				payment:function(data, actions) {
+				// Make a call to the REST api to create the payment
+					return actions.payment.create({
+					// Make a call to the REST api to execute the payment
+						payment: {
+							transactions: [
+								{
+									amount: {total: '10.00', currency: 'USD'}
+								}
+							]
+						}
 					});
-				}
-			}, '#paypal-button');
+				},
+			// onAuthorize() is called when the buyer approves the payment	
+			onAuthorize: function(data, actions) {
+				return actions.payment.execute().then((payment) => {
+					window.alert('Payment Complete!');
+				});
+			}
+		}, '#paypal-button');
 
-					//- });
 
-			
+		
 
 
