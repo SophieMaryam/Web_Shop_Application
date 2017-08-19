@@ -4,17 +4,19 @@ html
 		title Profile 
 		link(rel="stylesheet" href="../main.css" type="text/css")
 		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		script(src="https://www.paypalobjects.com/api/checkout.js")
 	body
 		div.header
 			div.nav1
 				ul 
 					li#top Ucci
 					li 
-						a(href="/") Home
-					li 
 						a(href="/contact") Contact
 					li 
 						a(href="/allclothes") Go Shopping
+					li 
+						a(href="/") Home
 					br
 					li
 						form#searchengine(name="form"  method="post" action="/searchengine" autocomplete="off")
@@ -26,11 +28,42 @@ html
 				br
 				br
 				h5 username:
-					h6 U
+				h6 Username
 				h5 Email: 
-					//- h6 #{user.email}
+				h6 Email
 			div#mainbar
 				h2 Welcome, Username, to your Ucci Profile
+				div#paypal-button
+
+		//- script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
+		script.
+			//- $(document).ready(() => {
+				paypal.Button.render({
+					env: 'sandbox', // Or 'sandbox',
+					client: {
+						sandbox:'AYyck9mdvGmSgiLth8GfTkGPQ4ideflMi3fDFwkw2nOaB2vBLfMQKxQ-y4NBps1cPVJ_rhEsvGk9zaUn',
+						production:'AeU35S07Q28V9uJqape6W4ki3GkhfAKEmequRYSFEx-6lskqqBtrWJwsawY6jDSRWahdGykAQGTd0r6G'
+					},
+					commit: true, // Show a 'Pay Now' button
+					payment: (data, actions) => {
+						return actions.payment.create({
+							payment: {
+								transactions: [
+									{
+										amount: {total: '10.00', currency: 'EUR'}
+									}
+								]
+							}
+						});
+					},
+				onAuthorize: function(data, actions) {
+					return actions.payment.execute().then(function(payment) {
+
+					});
+				}
+			}, '#paypal-button');
+
+			//- });
 
 			
 

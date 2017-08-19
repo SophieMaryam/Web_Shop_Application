@@ -385,14 +385,12 @@ html, body {
 
 #mainbar {
 	margin-left:200px; /* Width of the content */
-	background-color:black;
-	color:white;
 	font-family: 'Raleway', sans-serif;
 }
 
-#mainbar h1 {
-	text-align:center;
+#mainbar h2 {
 	color:white;
+	background-color:black;
 }
 
 
