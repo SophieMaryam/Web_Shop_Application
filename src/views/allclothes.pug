@@ -4,16 +4,106 @@ html
 		title Ucci Collection
 		link(rel="stylesheet" href="main.css" type="text/css")
 		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
-	body
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+	body#bodycollection
 		div.header
-			div.navlogin
-				ul 
+			div.navprofile
+				ul
 					li 
 						a(href="/contact") Contact
 					li 
 						a(href="/login") Login
 					li 
-
 						a(href="/") Home
-		h1 Ucci Collection
+					li#top1 Ucci
+
+		p#collection 'Be <strong> Bold' </strong> Collection
+		hr#hrcollection
+		div#clotheslist
+			div#eachitem
+				each item in eachItem
+					ul#mainlist
+						li#typename <strong> Name: </strong>
+							#typespan #{item.name}
+						li#price <strong> Price: </strong>
+							span#pricespan #{item.price} EUR
+						li#color <strong> Color: </strong> 
+							#colorspan #{item.color}
+						li#url
+							- var location = item.url
+							img(src=`${location}` style="height:200px; width:300px")
+						li 
+							button.waves-effect.waves-light.btn.modal-trigger.center-align.black(href="#newpost", data-target="newpost" id="buybutton") Buy
+							#newpost.modal
+								.modal-content
+									h3 #{item.name}
+									- var location = item.url
+									h1 
+									img(src=`${location}` style="height:200px; width:300px")
+									button(id="submit" type="submit", value="Submit").btn.modal-action.amber.lighten-2.waves-effect.waves-light.black-text Submit
+									div#paypal-button
+
+
+			
+		div.footercollection
+				hr#hrcollectiontwo
+				ul
+					li
+						a(href="https://www.facebook.com") Facebook
+					li
+						a(href="https://www.instagram.com") Instagram
+					li
+						a(href="https://www.twitter.com") Twitter
+					li
+						a(href="https://www.pinterest.com") Pinterest 
+
+				p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
+
+		script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
+		script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js")
+		script(src="https://www.paypalobjects.com/api/checkout.js")
+		script.
+			$(document).ready(() => {
+				$('#newpost').modal();
+			});	
+
+			paypal.Button.render({
+				env: 'sandbox', 
+				 // PayPal Client IDs - replace with your own
+				// Create a PayPal app: https://developer.paypal.com/developer/applications/create
+				client: {
+					sandbox:'AFcWxV21C7fd0v3bYYYRCpSSRl31AhCOxSeW8-a1RL2.s0zpAd5eEPB0',
+					production:'AeU35S07Q28V9uJqape6W4ki3GkhfAKEmequRYSFEx-6lskqqBtrWJwsawY6jDSRWahdGykAQGTd0r6G'
+					 // Show the buyer a 'Pay Now' button in the checkout flow
+				},
+				commit: true, // Show a 'Pay Now' button
+				// payment() is called when the button is clicked
+				payment:function(data, actions) {
+				// Make a call to the REST api to create the payment
+					return actions.payment.create({
+					// Make a call to the REST api to execute the payment
+						payment: {
+							transactions: [
+								{
+									amount: {total: '10.00', currency: 'USD'}
+								}
+							]
+						}
+					});
+				},
+				// onAuthorize() is called when the buyer approves the payment	
+				onAuthorize: function(data, actions) {
+					return actions.payment.execute().then((payment) => {
+						window.alert('Payment Complete!');
+					});
+				}
+				}, '#paypal-button');
+
+
+		
+			
+
 

@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer');
 
 // Model Configuration 
 const Sequelize = require('sequelize');
-const connection = new Sequelize('', '', '', {
+const sequelize = new Sequelize('webshopapplication', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
 	host: 'localhost',
 	dialect: 'postgres'
 });
@@ -30,12 +30,74 @@ app.use(session({
 	secret: "This is a secret",
 	resave:false, 
 	saveUninitialized: true
-
 }));
+
+// Models
+
+const User = sequelize.define('user',{
+	firstname: {
+		type: Sequelize.STRING
+	},
+	lastname: {
+		type: Sequelize.STRING
+	},
+	username: {
+		type: Sequelize.STRING,
+		unique:true
+	},
+	email: {
+		type: Sequelize.STRING,
+		unique:true,
+		validate: {
+			isEmail:true
+		}
+	},
+	password: {
+		type: Sequelize.STRING,
+		validate: {
+			notEmpty:true
+		}
+	},
+	password_confirmation: {
+		type: Sequelize.STRING,
+		validate: {
+			notEmpty:true
+		}
+	},
+},  {
+		timestamps:false
+	});
+
+const Clothes = sequelize.define('clothes',{
+	type: Sequelize.STRING,
+	name: Sequelize.STRING,
+	color: Sequelize.STRING,
+	url: Sequelize.STRING,
+	male: Sequelize.BOOLEAN,
+	female: Sequelize.BOOLEAN,
+	price: Sequelize.INTEGER
+},	{
+		timestamps:false
+	}
+);
+
+const Wishlist = sequelize.define('wishlist',{
+	type: Sequelize.STRING
+},	{
+		timestamps:false
+	}
+);
+
+
+User.belongsToMany(Clothes, {through: Wishlist});
+Clothes.belongsToMany(User, {through: Wishlist});
+Clothes.belongsTo(Wishlist);
+Wishlist.hasMany(Clothes);
+
+sequelize.sync({force:false});
 
 
 // Home page 
-
 app.get('/', (req, res) => {
 	res.render('index')
 });
@@ -53,6 +115,7 @@ app.post('/searchengine', (req,res) => {
 	})
 })
 
+
 // Login page
 app.get('/login', (req,res) => {
 	res.render('login')
@@ -67,26 +130,19 @@ app.get('/register', (req,res) => {
 // Profile page
 app.get('/profile', (req, res) => {
 	res.render('profile')
-	// var user = req.session.user;
-	// if(!user){
-	// 	res.redirect('/?message=' + encodeURIComponent("Please log in."));
-	// }
-
-	// if(user === undefined){
-	// 	res.redirect('/?message=' + encodeURIComponent("Please log in to view your profile."));
-	// } else {
-	// 	res.render('profile', {
-	// 		user:user
-	// 	});
-	// }
 });
 
 // All Clothes
 
 app.get('/allclothes', (req,res) => {
-	res.render('allclothes');
-})
-
+	Clothes.findAll()
+	.then((eachItem) => {
+		res.render('allclothes', {eachItem: eachItem})
+	})
+	.catch((err) => {
+		console.log(err)
+	});
+});
 
 // Contact Page 
 app.get('/contact', (req,res) => {

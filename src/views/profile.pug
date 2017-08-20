@@ -32,8 +32,8 @@ html
 				h5 Email: 
 				h6 Email
 			div#mainbar
-				h2 Welcome, Username, to your Ucci Profile
-				h3 Wishlist 
+				h3 Welcome, Username, to your Ucci Profile
+				h4 Wishlist 
 				div#paypal-button
 		div.footerprofile
 			ul
@@ -73,13 +73,13 @@ html
 						}
 					});
 				},
-			// onAuthorize() is called when the buyer approves the payment	
-			onAuthorize: function(data, actions) {
-				return actions.payment.execute().then((payment) => {
-					window.alert('Payment Complete!');
-				});
-			}
-		}, '#paypal-button');
+				// onAuthorize() is called when the buyer approves the payment	
+				onAuthorize: function(data, actions) {
+					return actions.payment.execute().then((payment) => {
+						window.alert('Payment Complete!');
+					});
+				}
+				}, '#paypal-button');
 
 
 		
