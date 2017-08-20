@@ -882,6 +882,7 @@ html, body {
 	float:left;
 	font-weight:bold;
 	font-size:40px;
+	margin-left:40px;
 }
 
 #collection {
@@ -915,6 +916,7 @@ html, body {
 	display:inline-block;
 	text-decoration:none;
 	list-style-type:none;
+	padding-left:80px;
 }
 
 #url {
@@ -955,6 +957,20 @@ html, body {
 	margin-top:30px;
 }
 
+#modalleft {
+	float:left;
+}
+#modalright {
+	float:right;
+	margin-right:100px;
+}
+
+
+#modalparent {
+	overflow:hidden;
+	display:inline;
+}
+
 .footercollection {
 	margin-top:600px;
 }
@@ -969,6 +985,7 @@ html, body {
 .footercollection ul {
 	text-decoration: none;
 	margin-left:450px;
+	margin-top:100px;
 }
 
 .footercollection a:-webkit-any-link{

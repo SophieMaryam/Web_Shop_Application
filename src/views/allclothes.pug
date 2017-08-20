@@ -39,15 +39,18 @@ html
 							button.waves-effect.waves-light.btn.modal-trigger.center-align.black(href="#newpost", data-target="newpost" id="buybutton") Buy
 							#newpost.modal
 								.modal-content
-									h3 #{item.name}
-									- var location = item.url
-									h1 
-									img(src=`${location}` style="height:200px; width:300px")
-									button(id="submit" type="submit", value="Submit").btn.modal-action.amber.lighten-2.waves-effect.waves-light.black-text Submit
-									div#paypal-button
-
-
-			
+									div#modalparent
+										div#modalleft
+											h3 #{item.name}
+											- var location = item.url.id
+											h1 
+											img(src=`${location}` style="height:200px; width:300px")
+											br
+											br
+										div#modalright
+											h6 <strong> price: </strong> 100
+											div#paypal-button
+		
 		div.footercollection
 				hr#hrcollectiontwo
 				ul
