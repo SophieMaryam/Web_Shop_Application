@@ -1,0 +1,39 @@
+doctype
+html
+	head
+		title Ucci Collection
+		link(rel="stylesheet" href="main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+	body#bodycollection
+		div.header
+			div.navprofile
+				ul
+					li 
+						a(href="/contact") Contact
+					li 
+						a(href="/login") Login
+					li 
+						a(href="/") Home
+					li#top1 Ucci
+
+		p#collection 'Be <strong> Bold' </strong> Collection
+		hr#hrcollection
+		div#clotheslist
+			div#eachitem
+				each item in selectiontype
+					ul#mainlist
+						li#typename <strong> Name: </strong>
+							#typespan #{item.name}
+						li#price <strong> Price: </strong>
+							span#pricespan #{item.price} EUR
+						li#color <strong> Color: </strong> 
+							#colorspan #{item.color}
+						li#url
+							- var location = item.url
+							img(src=`${location}` style="height:200px; width:300px")
+
+

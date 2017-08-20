@@ -105,13 +105,13 @@ app.get('/', (req, res) => {
 app.post('/searchengine', (req,res) => {
 	var input = req.body.search;
 
-	Clothes.findOne({
+	Clothes.findAll({
 		where: {
 			type:req.body.search
 		}
 	})
-	.then((clothestype) => {
-		res.render('')
+	.then((selectiontype) => {
+		res.render('selection', {selectiontype:selectiontype})
 	})
 })
 
@@ -198,6 +198,11 @@ app.post('/email', (req,res) => {
 
 }) 
 
+// Selection
+
+app.get('/selection', (req,res) => {
+	res.render('selection')
+})
 
 // SERVER
 
