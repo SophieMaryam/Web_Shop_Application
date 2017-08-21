@@ -1,0 +1,36 @@
+html
+	head
+	body
+		a(href='/profile') view profile
+		br
+		a(href='/') register
+		
+		h1 All clothes
+		
+		div
+			each item in eachItem
+				ul  
+					li #{item.name}
+					li #{item.price}
+					li #{item.color}
+					button.iconbutton(type="button" id=item.id)
+						img#icon(src="https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg" width="30px" height="30px")
+					li 
+						- var location = item.url
+						img(src=`${location}` style="height:100px; width:300px")
+		
+		script(type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js")
+		script.
+			$(document).ready(() => {
+				console.log('jquery linking??')
+				$(".iconbutton").click( function() {
+						var itemId = $(this).attr('id');
+						console.log(itemId);
+							var wishlist = {result:true, clothesid:itemId};
+
+							console.log('does click work?')
+							$.post("/icons", wishlist, (res) => {
+									console.log('post request coming through!');
+							});
+						});     
+				});                 

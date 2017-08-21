@@ -1,0 +1,13 @@
+html
+  body
+    a(href='/login') log in
+    
+    h1 Register here
+    form(method='POST' action='/register')
+      input#name.form-control(type='text',name  = 'inputName' placeholder='Your Name' minlength="2" required)
+      br
+      input#email.form-control(type='text', name = 'inputEmail' placeholder='Your Email' minlength="5" required)
+      br
+      input#password.form-control(type='text',name= 'inputPassword' placeholder='Your Password' minlength="4" required)
+      br
+      button#button(type='submit') Register  

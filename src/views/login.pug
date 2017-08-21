@@ -1,0 +1,11 @@
+html
+  head
+  body
+    a(href='/profile') view profile
+    br
+    a(href='/') register
+    h1 Login here
+      form(method='POST' action='/login')
+        input#email.form-control(type='text', name = 'inputEmail' placeholder='Your Email' minlength="5" required)
+        input#password.form-control(type='text',name= 'inputPassword' placeholder='Your Password' minlength="4" required)
+        button#button(type='submit') Log in
