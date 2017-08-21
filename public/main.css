@@ -893,58 +893,56 @@ html, body {
 	font-size:40px;
 }
 
-#hrcollection {
+..hrcollection {
 	margin-left:300px;
 	margin-right:300px;
 	border:1.5px solid grey;
 }
 
-#clotheslist {
+.clotheslist {
 	display:inline;
 }
 
-#eachitem {
+.eachitem {
 	text-transform: uppercase;
-	font-family: 'Raleway', sans-serif;
 	float:left;
 	margin-left:100px;
 	margin-top:50px;
 }
 
 
-#mainlist {
+.mainlist {
 	display:inline-block;
 	text-decoration:none;
 	list-style-type:none;
 	padding-left:80px;
 }
 
-#url {
-	margin-top:50px;
+.url {
+	margin-top:40px;
 }
 
-#typename {
+.typename {
 	text-align:center;
 }
 
-#price{
+.price{
 	text-align:center;
 }
 
-#color {
+.color {
 	text-align:center;
 }
 
-#typespan {
-	padding-left:5px;
-	font-weight:none;
-}
-
-#pricespan {
+.typespan {
 	padding-left:5px;
 }
 
-#colorspan {
+.pricespan {
+	padding-left:5px;
+}
+
+.colorspan {
 	padding-left:5px;
 }
 
@@ -952,7 +950,7 @@ html, body {
 	margin-top:700px;
 }
 
-#buybutton {
+.buybutton {
 	margin-left:100px;
 	margin-top:30px;
 }
