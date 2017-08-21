@@ -172,7 +172,7 @@ app.get('/search',(req,res) =>{
 	res.render('search')
 });
 
-app.get('/allclothes',(req,res) => {
+app.get('/collection',(req,res) => {
 
 	Clothes.findAll()
 	.then((eachItem) => {
@@ -220,6 +220,9 @@ app.post('/searchengine', (req,res) => {
     })
 })
 
+app.get('/selection', (req,res) => {
+    res.render('selection')
+})
 app.listen(3001, () => {
   console.log('App is working on port 3000');
 });
