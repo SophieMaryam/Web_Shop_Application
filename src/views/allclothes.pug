@@ -83,16 +83,7 @@ html
 				for(var i = 0; i < 10; i++){
 					$('#newpost'+i).modal();
 				}
-
-				$("#iconbutton").click(() => {
-						var wishlist = {result:true, clothesid:clothesid}
-						function addtowishlist(){
-							$.post("/icons", wishlist, (res) => {
-								$("#icon").attr('src', 'images/icon1.png');
-							});
-						}
-
-					}); 	
+				 	
 				});
 
 			paypal.Button.render({
