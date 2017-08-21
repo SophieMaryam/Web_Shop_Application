@@ -134,7 +134,7 @@ app.get('/profile', (req, res) => {
 
 // All Clothes
 
-app.get('/allclothes', (req,res) => {
+app.get('/collection', (req,res) => {
 	Clothes.findAll()
 	.then((eachItem) => {
 		res.render('allclothes', {eachItem: eachItem})

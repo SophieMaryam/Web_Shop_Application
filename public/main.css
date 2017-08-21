@@ -893,7 +893,7 @@ html, body {
 	font-size:40px;
 }
 
-..hrcollection {
+.hrcollection {
 	margin-left:300px;
 	margin-right:300px;
 	border:1.5px solid grey;
@@ -906,7 +906,7 @@ html, body {
 .eachitem {
 	text-transform: uppercase;
 	float:left;
-	margin-left:100px;
+	margin-left:200px;
 	margin-top:50px;
 }
 
@@ -914,44 +914,39 @@ html, body {
 .mainlist {
 	display:inline-block;
 	text-decoration:none;
-	list-style-type:none;
-	padding-left:80px;
+	margin-bottom:100px;
 }
 
 .url {
 	margin-top:40px;
+	margin-left:100px;
 }
 
 .typename {
 	text-align:center;
+	margin-left:100px;
 }
 
 .price{
 	text-align:center;
+	margin-left:100px;
 }
 
 .color {
 	text-align:center;
+	margin-left:100px;
 }
 
-.typespan {
-	padding-left:5px;
-}
-
-.pricespan {
-	padding-left:5px;
-}
-
-.colorspan {
+.thespans {
 	padding-left:5px;
 }
 
 #hrcollectiontwo {
-	margin-top:700px;
+	margin-top:800px;
 }
 
 .buybutton {
-	margin-left:100px;
+	margin-left:250px;
 	margin-top:30px;
 }
 

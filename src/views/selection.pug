@@ -21,23 +21,23 @@ html
 					li#top1 Ucci
 
 		p#collection 'Be <strong> Bold' </strong> Collection
-		hr#hrcollection
-		div#clotheslist
-			div#eachitem
+		hr.hrcollection
+		div.clotheslist
+			div.eachitem
 				each item in selectiontype
-					ul#mainlist
-						li#typename <strong> Name: </strong>
-							#typespan #{item.name}
-						li#price <strong> Price: </strong>
-							span#pricespan #{item.price} EUR
-						li#color <strong> Color: </strong> 
-							#colorspan #{item.color}
-						li#url
+					ul.mainlist
+						li.typename <strong> Name: </strong>
+							span.thespans #{item.name}
+						li.price <strong> Price: </strong>
+							span.thespans #{item.price} EUR
+						li.color <strong> Color: </strong> 
+							span.thespans #{item.color}
+						li.url
 							- var location = item.url
 							img(src=`${location}` style="height:200px; width:300px")
 
 
-		
+
 		div.footercollection
 				hr#hrcollectiontwo
 				ul
