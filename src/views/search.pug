@@ -5,8 +5,12 @@ html
     a(href='/profile') go to profile
     
     h2 Search for clothes
-    select
-      option(value='ASDA ') VoSADvo
-      option(value='sSDb') SaASD
-      option(value='mSDSD') MeASD
-      option(value='ASDSA') SADAS
+    
+    form#searchengine(name="form"  method="post" action="/search" autocomplete="off")
+      input#searchbar(name="search" type="text" placeholder="Search..." tabindex="0")  
+      
+    form(name="submitForm" method="POST" action="/search")
+      input(type="hidden" name="param1")
+      a(href="https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg")
+        
+          
