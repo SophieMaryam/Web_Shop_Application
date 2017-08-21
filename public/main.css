@@ -950,6 +950,19 @@ html, body {
 	margin-top:30px;
 }
 
+.buttons {
+	display:inline;
+}
+
+.iconbutton {
+	background-color:transparent;
+	outline:none;
+	border:none;
+	margin-left:100px;
+	float:right;
+	margin-top:30px;
+}
+
 #modalleft {
 	float:left;
 }

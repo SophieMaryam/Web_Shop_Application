@@ -68,7 +68,7 @@ const User = sequelize.define('user',{
 		timestamps:false
 	});
 
-const Clothes = sequelize.define('clothes',{
+const Clothes = sequelize.define('clothes', {
 	type: Sequelize.STRING,
 	name: Sequelize.STRING,
 	color: Sequelize.STRING,
@@ -81,8 +81,8 @@ const Clothes = sequelize.define('clothes',{
 	}
 );
 
-const Wishlist = sequelize.define('wishlist',{
-	type: Sequelize.STRING
+const Wishlist = sequelize.define('wishlist', {
+	addtowishlist: Sequelize.BOOLEAN
 },	{
 		timestamps:false
 	}
@@ -197,6 +197,15 @@ app.post('/email', (req,res) => {
 	})
 
 }) 
+
+
+app.post('/icons', (req,res) => {
+	Wishlist.create({
+		addtowishlist:wishlist.result,
+		userID:req.session.user,
+		clothesID:wishlist.clothesid
+	})
+})
 
 // Selection
 

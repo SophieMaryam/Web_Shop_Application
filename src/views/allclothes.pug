@@ -40,7 +40,7 @@ html
 						li.url
 							- var location = item.url
 							img(src=`${location}` style="height:400px; width:400px")
-						li 
+						li.buttons 
 							button.waves-effect.waves-light.btn.modal-trigger.center-align.black(href=`#newpost${item.id}`, data-target="newpost" data-id=`${item.id}` class="buybutton") Buy
 							div(id=`newpost${item.id}` class='modal')
 								.modal-content
@@ -56,6 +56,9 @@ html
 											h6 <strong> price: </strong> #{item.price} EUR 
 										div#paypal
 											div#paypal-button
+							button.iconbutton(type="button" id=item.id)
+								img#icon(src="/images/inon2.png" width="30px" height="30px")
+
 		br
 		br
 		div.footercollection
@@ -80,8 +83,17 @@ html
 				for(var i = 0; i < 10; i++){
 					$('#newpost'+i).modal();
 				}
-				
-			});	
+
+				$("#iconbutton").click(() => {
+						var wishlist = {result:true, clothesid:clothesid}
+						function addtowishlist(){
+							$.post("/icons", wishlist, (res) => {
+								$("#icon").attr('src', 'images/icon1.png');
+							});
+						}
+
+					}); 	
+				});
 
 			paypal.Button.render({
 				env: 'sandbox', 
