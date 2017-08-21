@@ -1,3 +1,4 @@
+
 doctype
 html
 	head
@@ -75,7 +76,7 @@ html
 
 				p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
 
-		script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
+		script(type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js")
 		script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js")
 		script(src="https://www.paypalobjects.com/api/checkout.js")
 		script.
@@ -83,7 +84,16 @@ html
 				for(var i = 0; i < 10; i++){
 					$('#newpost'+i).modal();
 				}
-				 	
+        	$(".iconbutton").click( function() {
+						var itemId = $(this).attr('id');
+						console.log(itemId);
+							var wishlist = {result:true, clothesid:itemId};
+
+							console.log('does click work?')
+							$.post("/icons", wishlist, (res) => {
+									console.log('post request coming through!');
+							});
+						});	 	
 				});
 
 			paypal.Button.render({
@@ -117,8 +127,3 @@ html
 					});
 				}
 				}, '#paypal-button');
-
-
-			
-
-

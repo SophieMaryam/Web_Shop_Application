@@ -1,3 +1,4 @@
+
 doctype
 html
 	head
@@ -18,19 +19,19 @@ html
 		h1#loginheader Welcome Back 
 		div
 			div#login
-				form(name="form" method="post" action="/bloglogin" id="form") 
+				form(name="form" method="post" action="/login" id="form") 
 					h2#logintitle 	Login
 					br
 					br
 					label#loginemail Email:
 					br
-					input#inputlogemail(type="text" name="inputEmail" placeholder="email@gmail")
+					input#inputlogemail(type="email" name="inputEmail" placeholder="email@gmail")
 					br
 					br
 					br
 					label#loginpassword Password:
 					br
-					input#inputlogpassword(type="inputPassword" name="password" placeholder="Password")
+					input#inputlogpassword(type="inputPassword" name="password" placeholder="Password" minlength="8" required)
 					br
 					br
 					br

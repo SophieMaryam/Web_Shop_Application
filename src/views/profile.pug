@@ -1,3 +1,4 @@
+
 doctype
 html 
 	head
@@ -27,12 +28,10 @@ html
 				br
 				br
 				br
-				h5 Username:
-				h6 Username
 				h5 Name:
-				h6 
+				h6 #{user.firstName} #{user.lastName}
 				h5 Email: 
-				h6 Email
+				h6 #{user.email}
 			div#mainbar
 				h3 Welcome, Username, to your Ucci Profile
 				h4 Wishlist 
@@ -82,8 +81,3 @@ html
 					});
 				}
 				}, '#paypal-button');
-
-
-		
-
-
