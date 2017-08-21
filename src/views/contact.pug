@@ -1,0 +1,140 @@
+doctype
+html
+	head
+		title Contact Us
+		link(rel="stylesheet" href="main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+	body#contactbody
+		div.header
+			div.nav
+				ul 
+					li 
+						a(href="/login") Login
+					li 
+						a(href="/collection") Go Shopping
+					li 
+						a(href="/") Home
+		div#contactpageimg 
+			div#content
+				h1 Ucci
+		h1.contacttitles Contact us
+		p.contacttitles#para We do our best to reply to your queries as soon as possible, within 48 hours, weekdays (Mon-Fri) and weekends (Sat).
+		
+		div#allcontacts
+			div.customerservice
+				h3#contactnumber Customer Service Phone Number 
+					span#plus +
+				div#details 
+					p 0031 637 336 38
+					br
+					p#openinghours From Mondays to Friday we are available from 8.20 to 19.30. We are only free to call on Saturday's during the weekend from 10.00 to 16.00. 
+			hr#hr
+			div.customerservice
+				h3#contactaddress European Base in Amsterdam 
+					span#plus1 +
+				div#address 
+					p Lange Kortstraat 15, 2536AM || Amsterdam, Netherlands 
+			
+			hr#hr
+			div.customerservice
+				h3#contactemail Email Us
+					span#plus2 +
+				form#emailform(action="/email" method="post" name="form")
+					label From: 
+					input#input1(name="from" type="text", placeholder="Only gmail accounts")
+					br
+					br
+					label Subject:
+					input#input2(name="subject" type="text", placeholder="Subject")
+					br
+					br
+					label Content:
+					br
+					br
+					textarea(id="textspace" name="content" type="text" resize="none" placeholder="Text..." )
+					br
+					br
+					label For verification, please insert your email's password: 
+					input#inputpw(name="password" type="password" placeholder="Email password" rows="10" columns="300") 
+					br
+					br
+					button#contactsubmit(type="submit") Submit
+			hr#hrcontact
+			div.footer
+				ul
+					li
+						a(href="https://www.facebook.com") Facebook
+					li
+						a(href="https://www.instagram.com") Instagram
+					li
+						a(href="https://www.twitter.com") Twitter
+					li
+						a(href="https://www.pinterest.com") Pinterest 
+
+				p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
+
+
+
+
+
+		script(type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js")
+		script.
+			$(document).ready(() => {
+				$('#contactnumber').click(function(){
+					$('#details').slideToggle("slow", function(){});
+				});  
+
+				$('#contactaddress').click(function(){
+					$('#address').slideToggle("slow", function(){});
+				});  
+
+				$('#contactemail').click(function(){
+					$('#emailform').slideToggle("slow", function(){});
+				});
+
+
+				$('#contactnumber').click(() => {
+				var plus = $('#plus').text()
+				
+				if(plus ==='+'){
+					$('#plus').text("-");
+				}
+
+				else{
+					$('#plus').html("+");
+				}
+				});
+
+				$('#contactaddress').click(() => {
+					var plus1 = $('#plus1').text()
+				
+					if(plus1 ==='+'){
+						$('#plus1').text("-");
+				}
+
+				else{
+					$('#plus1').html("+");
+				}
+				});
+
+				$('#contactemail').click(() => {
+					var plus2 = $('#plus2').text()
+				
+					if(plus2 ==='+'){
+						$('#plus2').text("-");
+				}
+
+				else{
+					$('#plus2').html("+");
+				}
+				});
+
+				$('#contactsubmit ').hover(() => {
+					$('#contactsubmit ').css("background-color", "#262626")
+				});
+
+				$('#contactsubmit ').mouseleave(() => {
+					$('#contactsubmit').css("background-color", "black")
+				})
+			});
+

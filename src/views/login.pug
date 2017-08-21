@@ -1,11 +1,68 @@
+
+doctype
 html
-  head
-  body
-    a(href='/profile') view profile
-    br
-    a(href='/') register
-    h1 Login here
-      form(method='POST' action='/login')
-        input#email.form-control(type='text', name = 'inputEmail' placeholder='Your Email' minlength="5" required)
-        input#password.form-control(type='text',name= 'inputPassword' placeholder='Your Password' minlength="4" required)
-        button#button(type='submit') Log in
+	head
+		title Login 
+		link(rel="stylesheet" href="main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+	body#loginbody
+		img#fashionlogin(src="/images/loginfashion.jpeg")
+		div.header
+			div.navlogin
+				ul 
+					li 
+						a(href="/contact") Contact
+					li 
+						a(href="/collection") Go Shopping
+					li 
+						a(href="/") Home
+		h1#loginheader Welcome Back 
+		div
+			div#login
+				form(name="form" method="post" action="/login" id="form") 
+					h2#logintitle 	Login
+					br
+					br
+					label#loginemail Email:
+					br
+					input#inputlogemail(type="email" name="inputEmail" placeholder="email@gmail")
+					br
+					br
+					br
+					label#loginpassword Password:
+					br
+					input#inputlogpassword(type="inputPassword" name="password" placeholder="Password" minlength="8" required)
+					br
+					br
+					br
+					br
+					button#submitbutton(type="submit") Submit 	
+				div#goregister
+					h4 Not a user yet? 
+						a(href="/register") Register here
+		hr#hrlogin
+		div.footerlogin
+				ul
+					li
+						a(href="https://www.facebook.com") Facebook
+					li
+						a(href="https://www.instagram.com") Instagram
+					li
+						a(href="https://www.twitter.com") Twitter
+					li
+						a(href="https://www.pinterest.com") Pinterest 
+
+				p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
+			
+		script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
+		script.
+			$(document).ready(() => {
+				$('#submitbutton').hover(() => {
+				$('#submitbutton').css("background-color", "#262626")
+			});
+
+				$('#submitbutton').mouseleave(() => {
+				$('#submitbutton').css("background-color", "black")
+			})
+
+			});

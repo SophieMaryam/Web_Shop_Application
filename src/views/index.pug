@@ -1,0 +1,72 @@
+doctype
+html
+	head
+		title Homepage
+		link(rel="stylesheet" href="main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+		link(rel="stylesheet" href="animate.min.css")
+	body
+		div.allinfo
+			div.header
+				div.nav
+					ul 
+						li 
+							a(href="/contact") Contact
+						li 
+							a(href="/login") Login
+						li 
+							a(href="/collection") Go Shopping
+					form#searchengine(name="form"  method="post" action="/searchengine" autocomplete="off")
+						input#searchbar(name="search" type="text" placeholder="Search..." tabindex="0")
+			div.container
+				div.containercontent 
+					h1 Introducing all new Ucci
+					a.btn.btn-1#button1(href='https://www.google.com')
+						svg 
+							rect(x='0', y='0', fill='none', width='100%', height='100%')
+								span#span1  Men
+
+					a.btn.btn-1#button2(href='https://www.google.com')
+						svg
+							rect(x='0', y='0', fill='none', width='100%', height='100%') 
+								span  Women
+				
+
+			div.footer
+				p#one
+					| Be part of the world of 
+					span#demo Fashion | Beauty | Ucci
+					| 
+				ul
+					li
+						a(href="https://www.facebook.com") Facebook
+					li
+						a(href="https://www.instagram.com") Instagram
+					li
+						a(href="https://www.twitter.com") Twitter
+					li
+						a(href="https://www.pinterest.com") Pinterest 
+
+				p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
+
+	script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js")
+	script(src="js/jQuery.cycleText.js")
+	script.
+		$(document).ready(() => {
+			$('#searchbar').click(() => {
+			$('#searchbar').css("font-size", "40px")
+			});
+
+			$('#searchbar').click(() => {
+			$('#searchbar').css("margin-top", "100px")
+			});
+
+			$('#demo').cycleText();
+			$('#demo').cycleText('pause');
+			$('#demo').cycleText('resume');
+			$('#demo').cycleText({
+				separator: '|',
+				animation: 'flipInX',
+				interval: 2000
+			});
+		});

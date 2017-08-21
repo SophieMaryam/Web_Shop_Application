@@ -1,3 +1,1018 @@
-body {
-  background-color: white;
+
+/*Home Page*/
+html, body {
+	margin:0;
+	padding:0;
+}
+
+
+.header {
+	top:0;
+	left:0;
+	width:100%;
+	position:absolute;
+}
+.nav {
+	text-align:center;
+	margin-left:10px;
+}
+
+.nav ul {
+	color:black;
+	list-style-type: none;
+	text-align:center;
+}
+
+.nav li {
+	display:inline;
+	float:right;
+	text-transform:uppercase;
+	padding-right:15px;
+	font-family: 'Raleway', sans-serif;;
+}
+
+.nav a:-webkit-any-link{
+	color: white;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.nav a:hover {
+	color: #808080;
+}
+
+.nav a:linked{
+	color:white;
+}
+
+#searchengine {
+	float:right;
+	margin-left:30px;
+	position:absolute;
+}
+
+#searchbar {
+	background-color:transparent;
+	color: white;
+    resize: none;
+    border-bottom-style:solid white;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+}
+
+#submit {
+	width:30px;
+	height:10px;
+}
+
+.container {
+	background:url('/images/fashionw.jpg')center center fixed;
+	background-size:cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	height:900px;
+	width:100%;
+}
+
+.containercontent {
+	color:white;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+	padding-top:300px;
+	text-transform: uppercase
+    
+}
+
+.containercontent h1 {
+	text-shadow: 1.3px 1.3px black;
+	font-size:50px;
+}	
+
+.btn-1 {
+  margin-right:70px;
+  margin-left:30px;
+  color:white;
+  background-color:none;
+
+}
+
+
+.btn-1 svg {
+  height: 50px;
+  position:absolute;		
+  width:120px;
+}
+
+.btn-1 rect {
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-dasharray: 422, 0;
+
+}
+
+#button1 {
+	text-decoration: none;
+	padding-left:10px;
+}
+
+#button2 {
+	text-decoration: none;
+	padding-right:10px;
+}
+
+.btn-1:hover {
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.btn-1:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 100;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#span1 {
+	margin-left:5px;
+}
+
+.footer h1 {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	margin-top:50px;
+
+}
+.footer li {
+	display:inline;
+	padding-left:40px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+.footer ul {
+	text-decoration: none;
+	margin-top:100px;
+	margin-left:450px;
+}
+
+.footer a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.footer a:hover {
+	color:#4286f4;
+}
+
+.footer a:linked{
+	color:black;
+}
+
+.footer #two {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+	margin-top:100px;
+	font-size:10px;
+}
+
+
+.footer #one {
+	text-transform: uppercase;
+	font-family:'Raleway', sans-serif;
+	text-align:center;
+	margin-top:100px;
+	font-size:40px;
+}
+
+/* LOGIN */
+
+#loginbody {
+	background-color:#faf8f5;
+}
+
+#fashionlogin {
+	float:left;
+	height:762px;
+	width:500px;
+	top:0;
+	left:0;
+	position:absolute;
+}
+
+.navlogin {
+	text-align:center;
+	margin-left:10px;
+}
+
+.navlogin ul {
+	color:black;
+	list-style-type: none;
+	text-align:center;
+	margin-right:10px;
+}
+
+.navlogin li {
+	display:inline;
+	float:right;
+	text-transform:uppercase;
+	padding-right:15px;
+	font-family: 'Raleway', sans-serif;;
+}
+
+.navlogin a:-webkit-any-link{
+	color:black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.navlogin a:hover {
+	color: #808080;
+}
+
+.navlogin a:linked{
+	color:black;
+}
+
+#loginheader {
+	margin-left:170px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+	margin-top:90px;
+}
+
+
+#login {
+	text-align:center;
+	margin-top:80px;
+	margin-left:120px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+}
+
+#logintitle {
+	margin-left:50px;
+}
+
+#loginemail {
+	margin-right:98px;
+}
+
+#inputlogemail {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom:1px solid #595959;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+    margin-left:52px;
+   	width:200px;
+}
+
+#loginpassword {
+	margin-right:57px;
+}
+
+#inputlogpassword {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom:1px solid  #595959;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;		
+    width:200px;
+    margin-left:52px;	
+}
+
+#submitbutton {
+	background-color:black;
+	color:white;
+	border:none;
+	width:100px;
+	height:40px;
+	font-size:15px;
+	margin-left:50px;
+}
+
+#goregister {
+	color:black;
+	float:right;
+	margin-right:550px;
+	display:inline;
+	margin-top:60px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+#goregister a:-webkit-any-link{
+	color:black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+#goregister a:hover {
+	color: #808080;
+}
+
+#goregister a:linked{
+	color:black;
+}
+
+#hrlogin {
+	margin-top:250px;
+}
+
+.footerlogin {
+	margin-top:100px;
+}
+
+.footerlogin li {
+	display:inline;
+	padding-left:40px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+.footerlogin ul {
+	text-decoration: none;
+	margin-left:450px;
+}
+
+.footerlogin a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.footerlogin a:hover {
+	color:#808080;
+}
+
+.footerlogin a:linked{
+	color:black;
+}
+
+.footerlogin #two {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+	margin-top:100px;
+	font-size:10px;
+}
+
+/*Register*/
+
+#fashionregister {
+	float:right;
+	height:767px;
+	width:500px;
+	top:0;
+	right:0;
+	position:absolute;
+}
+
+.headerreg {
+	top:0;
+	right:0;
+	width:100%;
+	position:absolute;
+}
+
+
+.navregister ul {
+	color:black;
+	list-style-type:none;
+}
+
+.navregister li {
+	display:inline;
+	text-transform:uppercase;
+	padding-right:15px;
+	font-family: 'Raleway', sans-serif;	
+}
+
+.navregister a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.navregister a:hover {
+	color: #808080;
+}
+
+.navregister a:linked{
+	color:black;
+}
+
+#registerheader {
+	text-align:center;
+	margin-right:300px;
+	font-family: 'Raleway', sans-serif;	
+	text-transform:uppercase;
+	margin-top:100px;
+}
+
+#register {
+	text-align:center;
+	margin-right:350px;
+	text-align:center;
+	margin-top:80px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+}
+
+#registertitle {
+	margin-left:60px;
+}
+
+#registerfirstname {
+	margin-right:95px;
+}
+
+#inputname {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom:1px solid #595959;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+    margin-left:60px;
+   	width:251px;
+}
+
+#registerlastname {
+	margin-right:95px;
+}
+
+#inputlastname {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom:1px solid #595959;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+    margin-left:60px;
+   	width:251px;
+}
+
+#registeremail {
+	margin-right:140px;
+}
+
+#inputregemail {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom:1px solid #595959;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+    margin-left:60px;
+   	width:251px;
+}
+
+#accounttype {
+	color:grey;
+	font-size:10px;
+	margin-right:52px;
+}
+
+#registerpassword {
+	margin-right:100px;
+}
+
+#inputregpassword {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom:1px solid  #595959;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;		
+    width:251px;
+    margin-left:60px;	
+}
+
+#characterlength {
+	color:grey;
+	font-size:10px;
+	margin-left:60px;
+}
+
+#submitbtn {
+	background-color:black;
+	color:white;
+	border:none;
+	width:100px;
+	height:40px;
+	font-size:15px;
+	margin-left:70px;
+	cursor:pointer;
+}
+
+#hrregister {
+	margin-top:100px;
+}
+
+.footerregister{
+	margin-top:100px;
+}
+
+.footerregister li {
+	display:inline;
+	padding-left:40px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+.footerregister ul {
+	text-decoration: none;
+	margin-left:450px;
+}
+
+.footerregister a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.footerregister a:hover {
+	color:#808080;
+}
+
+.footerregister a:linked{
+	color:black;
+}
+
+.footerregister #two {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+	margin-top:100px;
+	font-size:10px;
+}
+
+/*Contact*/
+
+#contactbody {
+	background-color:#FFFAF0;
+	text-transform:uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+#contactpageimg {
+	background:url('/images/suits.jpeg')center center;
+	background-size:cover;
+	height:300px	;
+	width:100%;
+	top:0;
+	left:0;
+}
+
+#content {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:white;
+	padding-left:30px;
+	padding-top:45px;
+	font-size:40px;
+	text-shadow: 1.3px 1.3px black;
+}
+
+
+.contacttitles {
+	text-align:center;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color:black;
+	margin-top:50px;
+}
+
+#para {
+	font-size:15px;
+}
+
+.customerservice {
+	margin-left:400px;
+}
+
+#openinghours {
+	font-size:10px;
+}
+
+
+#allcontacts {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	margin-top:100px;
+}
+
+#othercontact {
+	margin-top:100px;
+	margin-left:400px;
+}
+
+#contactnumber {
+	cursor:pointer;
+}
+
+#plus {
+	margin-left:410px;
+}
+
+#details {
+	display:none;
+}
+
+#hr {
+	margin-right:350px;
+	margin-left:390px;
+}
+
+#contactaddress {
+	cursor:pointer;
+}
+
+#address {
+	display:none;
+}
+
+#plus1 {
+	margin-left:450px;
+}
+
+
+#contactemail {
+	cursor:pointer;
+}
+
+#emailform {
+	display:none;
+	font-family: 'Raleway', sans-serif;
+}
+
+#plus2 {
+	margin-left:668px;
+}
+
+#hrcontact {
+	margin-top:100px;
+}
+
+#input {
+	margin-left:54px;
+}
+#input1 {
+	margin-left:30px;
+}
+
+#input2 {
+	margin-left:12px;
+}
+
+#textspace {
+	width:740px;
+	height:160px;
+	font-family: 'Raleway', sans-serif;
+	resize:none;
+}
+
+#inputpw {
+	margin-left:10px;
+}
+
+#contactsubmit {
+	background-color:black;
+	color:white;
+	border:none;
+	width:100px;
+	height:40px;
+	font-size:15px;
+	cursor:pointer;
+}
+
+/* Profile*/
+
+.nav1 {
+	margin-left:10px;
+}
+
+.nav1 ul {
+	color:black;
+	list-style-type: none;
+}
+
+.nav1 li {
+	display:inline;
+	float:right;
+	text-transform:uppercase;
+	padding-right:15px;
+	font-family: 'Raleway', sans-serif;;
+}
+
+.nav1 a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.nav1 a:hover {
+	color:#808080;
+}
+
+.nav1 a:linked{
+	color:black;
+}
+
+.nav1 #top {
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	color:black;
+	float:left;
+	font-weight:bold;
+	font-size:40px;
+}
+
+#profilecontent {
+	overflow:hidden;
+	margin-top:100px;
+	padding-left:50px;
+}
+
+#sidebar {
+	width:300px;
+	font-family: 'Raleway', sans-serif;
+	float:left;	
+
+}
+
+#mainbar {
+	margin-left:200px; /* Width of the content */
+	font-family: 'Raleway', sans-serif;
+}
+
+#mainbar h3 {	
+	color:white;
+	background-color:black;
+	height:20px;
+	padding-top:4px;
+	padding-bottom:4px;
+}
+
+#mainbar h3 {
+
+}
+
+
+#searchengine {
+	float:right;
+	margin-left:15px;
+	position:absolute;
+	margin-top:40px;
+}
+
+#searchbar1 {
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom-style:solid black;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
+    font-size:20px;
+}
+
+.footerprofile {
+	margin-top:300px;
+}
+
+.footerprofile li {
+	display:inline;
+	padding-left:40px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+.footerprofile ul {
+	text-decoration: none;
+	margin-left:450px;
+}
+
+.footerprofile a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.footerprofile a:hover {
+	color:#808080;
+}
+
+.footerprofile a:linked{
+	color:black;
+}
+
+.footerprofile #two {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+	margin-top:100px;
+	font-size:10px;
+}
+
+/*All clothes*/
+
+#bodycollection {
+	background-color:#faf8f5
+}
+.navprofile {
+	margin-left:10px;
+}
+
+.navprofile ul {
+	color:black;
+	list-style-type:none;
+}
+
+.navprofile li {
+	display:inline;
+	float:right;
+	text-transform:uppercase;
+	padding-right:15px;
+	font-family: 'Raleway', sans-serif;;
+}
+
+.navprofile a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.navprofile a:hover {
+	color:#808080;
+}
+
+.navprofile a:linked{
+	color:black;
+}
+
+.navprofile #top1 {
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	color:black;
+	float:left;
+	font-weight:bold;
+	font-size:40px;
+	margin-left:40px;
+}
+
+#collection {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	margin-top:100px;
+	text-align:center;
+	font-size:40px;
+}
+
+.hrcollection {
+	margin-left:300px;
+	margin-right:300px;
+	border:1.5px solid grey;
+}
+
+.clotheslist {
+	display:inline;
+}
+
+.eachitem {
+	text-transform: uppercase;
+	float:left;
+	margin-left:200px;
+	margin-top:50px;
+}
+
+
+.mainlist {
+	display:inline-block;
+	text-decoration:none;
+	margin-bottom:100px;
+}
+
+.url {
+	margin-top:40px;
+	margin-left:100px;
+}
+
+.typename {
+	text-align:center;
+	margin-left:100px;
+}
+
+.price{
+	text-align:center;
+	margin-left:100px;
+}
+
+.color {
+	text-align:center;
+	margin-left:100px;
+}
+
+.thespans {
+	padding-left:5px;
+}
+
+#hrcollectiontwo {
+	margin-top:800px;
+}
+
+.buybutton {
+	margin-left:250px;
+	margin-top:30px;
+}
+
+.buttons {
+	display:inline;
+}
+
+.iconbutton {
+	background-color:transparent;
+	outline:none;
+	border:none;
+	margin-left:100px;
+	float:right;
+	margin-top:30px;
+}
+
+#modalleft {
+	float:left;
+}
+#modalright {
+	float:right;
+	margin-right:100px;
+}
+
+
+#modalparent {
+	overflow:hidden;
+	display:inline;
+}
+
+.footercollection {
+	margin-top:600px;
+}
+
+.footercollection li {
+	display:inline;
+	padding-left:40px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+.footercollection ul {
+	text-decoration: none;
+	margin-left:450px;
+	margin-top:100px;
+}
+
+.footercollection a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.footercollection a:hover {
+	color:#808080;
+}
+
+.footercollection a:linked{
+	color:black;
+}
+
+.footercollection #two {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+	margin-top:100px;
+	font-size:10px;
 }

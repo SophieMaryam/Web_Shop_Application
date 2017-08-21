@@ -1,17 +1,17 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 
+const bodyParser = require('body-parser');
 app.use('/', bodyParser.urlencoded({extended:true}));
+
+const nodemailer = require('nodemailer');
 
 // Sessions
 
 const session = require('express-session');
-// Model Configuration
 
 const Sequelize = require('sequelize');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 const sequelize = new Sequelize('web_shop_application','account1',null,  {
 	host: 'localhost',
 	dialect: 'postgres',
@@ -19,7 +19,6 @@ const sequelize = new Sequelize('web_shop_application','account1',null,  {
 	define: {
 		timestamps: false
 	}
-
 });
 
 // bcrypt
@@ -33,7 +32,6 @@ app.set('view engine', 'pug');
 app.use(express.static(__dirname + "/../public"));
 
 
-
 app.use(session({
 	secret: "This is a secret",
 	resave:false,
@@ -45,6 +43,7 @@ app.use(session({
 	})
 }));
 
+// Model Configuration
 
 const User = sequelize.define('user',{
 	firstname: {
@@ -85,15 +84,6 @@ const Wishlist = sequelize.define('wishlist',{
 	addToWishList: Sequelize.BOOLEAN
 });
 
-// app.post('/searchengine', (req,res) => {
-//     var input = req.body.search;
-
-//     Clothes.findOne({
-//         where: {
-//             type:req.body.search
-//         }
-//     })
-// })
 
 // relationships
 
@@ -168,10 +158,7 @@ app.get('/logout',(req,res) =>{
   });
 });
 
-app.get('/search',(req,res) =>{
-	res.render('search')
-});
-
+// Collection page (All clothes)
 app.get('/collection',(req,res) => {
 
 	Clothes.findAll()
@@ -181,6 +168,11 @@ app.get('/collection',(req,res) => {
 	.catch((err) => {
 		console.log(err)
 	})
+});
+
+// Search page 
+app.get('/search',(req,res) =>{
+	res.render('search')
 });
 
 app.post('/search', (req,res) => {
@@ -197,6 +189,7 @@ app.post('/search', (req,res) => {
 	});
 });
 
+// Collection page - wishlist icon
 app.post('/icons', (req,res) => {
 	console.log(req.body);
 
@@ -207,6 +200,7 @@ app.post('/icons', (req,res) => {
     })
 });
 
+// Home page search engine
 app.post('/searchengine', (req,res) => {
     var input = req.body.search;
 
@@ -220,9 +214,65 @@ app.post('/searchengine', (req,res) => {
     })
 })
 
+// Selection Page
 app.get('/selection', (req,res) => {
     res.render('selection')
 })
+
+// Contact page
+app.get('/contact', (req,res) => {
+    res.render('contact')
+});
+
+  // Nodemailer
+  // Note: For nodemailer to work, click on this url https://www.google.com/settings/security/lesssecureapps, turn on the access to third party apps
+  // This url will redirect you to your browser settings
+
+app.post('/email', (req,res) => {
+	var sentfrom = req.body.from,
+	subject = req.body.subject
+	emailcontent = req.body.content,
+	password = req.body.password;
+
+	console.log('sendingfrom: ' + sentfrom);
+	console.log('subject: ' + subject);
+	console.log('email content: ' + emailcontent);
+	console.log('password: ' + password);
+
+
+	let transporter = nodemailer.createTransport({
+		host: 'smtp.gmail.com',
+		port: 465,
+		secure: true,
+		service: 'Gmail',
+		auth: {
+			user: sentfrom,
+			pass: password
+		},
+		tls: {
+			rejectUnauthorized:false
+		}
+	});
+
+	let mailOptions = {
+		from:'sophiemaryam@gmail.com', 
+		to: sentfrom,
+		subject: subject,
+		text: emailcontent,
+		html: emailcontent
+	};
+
+	transporter.sendMail(mailOptions, (err, info) => {
+		if (err) {
+			throw err
+		}
+		console.log('Message %s sent: %s');
+		console.log('info' + info);
+	})
+
+}) 
+
+// Server
 app.listen(3001, () => {
   console.log('App is working on port 3000');
 });

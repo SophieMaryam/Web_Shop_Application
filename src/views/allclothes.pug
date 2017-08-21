@@ -1,29 +1,90 @@
+
+doctype
 html
 	head
-	body
-		a(href='/profile') view profile
-		br
-		a(href='/') register
-		
-		h1 All clothes
-		
-		div
-			each item in eachItem
-				ul  
-					li #{item.name}
-					li #{item.price}
-					li #{item.color}
-					button.iconbutton(type="button" id=item.id)
-						img#icon(src="https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg" width="30px" height="30px")
+		title Ucci Collection
+		link(rel="stylesheet" href="main.css" type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+	body#bodycollection
+		div.header
+			div.navprofile
+				ul
 					li 
-						- var location = item.url
-						img(src=`${location}` style="height:100px; width:300px")
-		
+						a(href="/contact") Contact
+					li 
+						if(user)
+							a(href="/profile")
+						else 
+							a(href="/login") Login
+						
+					li 
+						a(href="/") Home
+					li#top1 Ucci
+
+		p#collection 'Be <strong> Bold' </strong> Collection
+		hr.hrcollection
+		div.clotheslist
+			div.eachitem
+				each item in eachItem
+					ul.mainlist
+						li.typename <strong> Name: </strong>
+							.typespan #{item.name}
+						li.color <strong> Color: </strong> 
+							.colorspan #{item.color}
+						br
+						li.price <strong> Price: </strong>
+							span.pricespan #{item.price} EUR
+						li.url
+							- var location = item.url
+							img(src=`${location}` style="height:400px; width:400px")
+						li.buttons 
+							button.waves-effect.waves-light.btn.modal-trigger.center-align.black(href=`#newpost${item.id}`, data-target="newpost" data-id=`${item.id}` class="buybutton") Buy
+							div(id=`newpost${item.id}` class='modal')
+								.modal-content
+									div#modalparent
+										div#modalleft
+											h3 #{item.name}
+											- var location = item.url
+											h1 
+											img(src=`${location}` style="height:300px; width:400px")
+											br
+											br
+										div#modalright
+											h6 <strong> price: </strong> #{item.price} EUR 
+										div#paypal
+											div#paypal-button
+							button.iconbutton(type="button" id=item.id)
+								img#icon(src="/images/inon2.png" width="30px" height="30px")
+
+		br
+		br
+		div.footercollection
+				hr#hrcollectiontwo
+				ul
+					li
+						a(href="https://www.facebook.com") Facebook
+					li
+						a(href="https://www.instagram.com") Instagram
+					li
+						a(href="https://www.twitter.com") Twitter
+					li
+						a(href="https://www.pinterest.com") Pinterest 
+
+				p#two  © 2017 Ucci By Ucci. - All rights reserved. Ucci Fashion World. - IT VAT nr 087366373836. SIAE LICENCE # 3345/J/1995 and 1034/J/1995
+
 		script(type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js")
+		script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js")
+		script(src="https://www.paypalobjects.com/api/checkout.js")
 		script.
 			$(document).ready(() => {
-				console.log('jquery linking??')
-				$(".iconbutton").click( function() {
+				for(var i = 0; i < 10; i++){
+					$('#newpost'+i).modal();
+				}
+        	$(".iconbutton").click( function() {
 						var itemId = $(this).attr('id');
 						console.log(itemId);
 							var wishlist = {result:true, clothesid:itemId};
@@ -32,5 +93,37 @@ html
 							$.post("/icons", wishlist, (res) => {
 									console.log('post request coming through!');
 							});
-						});     
-				});                 
+						});	 	
+				});
+
+			paypal.Button.render({
+				env: 'sandbox', 
+				 // PayPal Client IDs - replace with your own
+				// Create a PayPal app: https://developer.paypal.com/developer/applications/create
+				client: {
+					sandbox:'AYyck9mdvGmSgiLth8GfTkGPQ4ideflMi3fDFwkw2nOaB2vBLfMQKxQ-y4NBps1cPVJ_rhEsvGk9zaUn',
+					production: '<insert production client id>'
+					 // Show the buyer a 'Pay Now' button in the checkout flow
+				},
+				commit: true, // Show a 'Pay Now' button
+				// payment() is called when the button is clicked
+				payment:function(data, actions) {
+				// Make a call to the REST api to create the payment
+					return actions.payment.create({
+					// Make a call to the REST api to execute the payment
+						payment: {
+							transactions: [
+								{
+									amount: {total: `${item.price}`, currency: 'USD'}
+								}
+							]
+						}
+					});
+				},
+				// onAuthorize() is called when the buyer approves the payment	
+				onAuthorize: function(data, actions) {
+					return actions.payment.execute().then((payment) => {
+						window.alert('Payment Complete!');
+					});
+				}
+				}, '#paypal-button');
