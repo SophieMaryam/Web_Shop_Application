@@ -11,17 +11,18 @@ html
 		div.header
 			div.nav1
 				ul 
-					li#top Ucci
+					li#top
+						a(href="/") Ucci
+					li
+						a(href="/logout") Logout
 					li 
 						a(href="/contact") Contact
 					li 
 						a(href="/collection") Go Shopping
-					li 
-						a(href="/") Home
 					br
 					li
-						form#searchengine(name="form"  method="post" action="/searchengine" autocomplete="off")
-							input#searchbar1(name="search" type="text" placeholder="Search..." tabindex="0")
+						form#searchengine(name="form"  method="post" action="/profilesearchengine" autocomplete="off")
+							input#searchbar1(name="profilesearchengine" type="text" placeholder="Search..." tabindex="0")
 		div#profilecontent
 			div#sidebar
 				br
@@ -29,13 +30,17 @@ html
 				br
 				br
 				h5 Name:
-				h6 #{user.firstName} #{user.lastName}
+				h6 #{user.firstname} #{user.lastname}
 				h5 Email: 
 				h6 #{user.email}
 			div#mainbar
 				h3 Welcome, Username, to your Ucci Profile
-				h4 Wishlist 
+				h5 Go search out website for anything you might like! 
+				//- h4 Wishlist 
+				//- 	// - var location = wishlist.clotheId
+					//- img(src=`${}` style="height:400px; width:400px")}
 				div#paypal-button
+		hr#hrprofile
 		div.footerprofile
 			ul
 				li

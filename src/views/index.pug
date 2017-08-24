@@ -13,20 +13,23 @@ html
 						li 
 							a(href="/contact") Contact
 						li 
-							a(href="/login") Login
-						li 
 							a(href="/collection") Go Shopping
+						li 
+							if user
+								a(href="/profile") Profile
+							else 
+								a(href="/login") Login
 					form#searchengine(name="form"  method="post" action="/searchengine" autocomplete="off")
 						input#searchbar(name="search" type="text" placeholder="Search..." tabindex="0")
 			div.container
 				div.containercontent 
 					h1 Introducing all new Ucci
-					a.btn.btn-1#button1(href='https://www.google.com')
+					a.btn.btn-1#button1(href='/men')
 						svg 
 							rect(x='0', y='0', fill='none', width='100%', height='100%')
 								span#span1  Men
 
-					a.btn.btn-1#button2(href='https://www.google.com')
+					a.btn.btn-1#button2(href='/women')
 						svg
 							rect(x='0', y='0', fill='none', width='100%', height='100%') 
 								span  Women

@@ -13,13 +13,19 @@ html
 					li 
 						a(href="/") Home
 					li 
+						if user
+							a(href="/profile") Profile
+						else 
+							a(href="/login") Login
+					li 
 						a(href="/collection") Go Shopping	
 					li 
 						a(href="/contact") Contact
+
 		h1#registerheader Join the Ucci Community 
 		div#reglog
 			div#register
-				form(name="form" method="post" action="/bloglogin" id="form") 
+				form(name="form" method="post" action="/register" id="form") 
 					h2#registertitle Register
 					br
 					br
@@ -41,6 +47,11 @@ html
 					label#registerpassword password:
 					br
 					input#inputregpassword(type="password" name="inputPassword")
+					p#characterlength Password must be longer than 8 characters.
+					br
+					label#registerconfpassword password confirmation:	
+					br
+					input#inputregpassword(type="password" name="passwordconfirmation") 
 					p#characterlength Password must be longer than 8 characters.
 					br
 					br

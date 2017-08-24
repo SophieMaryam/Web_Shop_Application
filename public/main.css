@@ -375,7 +375,7 @@ html, body {
 
 #fashionregister {
 	float:right;
-	height:767px;
+	height:798px;
 	width:500px;
 	top:0;
 	right:0;
@@ -421,14 +421,14 @@ html, body {
 	margin-right:300px;
 	font-family: 'Raleway', sans-serif;	
 	text-transform:uppercase;
-	margin-top:100px;
+	margin-top:80px;
 }
 
 #register {
 	text-align:center;
 	margin-right:350px;
 	text-align:center;
-	margin-top:80px;
+	margin-top:40px;
 	text-transform: uppercase;
 	font-family: 'Raleway', sans-serif;
 	color:black;
@@ -518,6 +518,10 @@ html, body {
 	margin-left:60px;
 }
 
+#registerconfpassword {
+	margin-left:28px;
+}
+
 #submitbtn {
 	background-color:black;
 	color:white;
@@ -596,6 +600,20 @@ html, body {
 	padding-top:45px;
 	font-size:40px;
 	text-shadow: 1.3px 1.3px black;
+}
+
+#content a:-webkit-any-link{
+	color: white;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+#content a:hover {
+	color:#808080;
+}
+
+#content a:linked{
+	color:white;
 }
 
 
@@ -802,8 +820,12 @@ html, body {
     font-size:20px;
 }
 
+#hrprofile {
+	margin-top:200px;
+}
+
 .footerprofile {
-	margin-top:300px;
+	margin-top:100px;
 }
 
 .footerprofile li {
@@ -1016,3 +1038,63 @@ html, body {
 	margin-top:100px;
 	font-size:10px;
 }
+
+/*Search*/
+
+#searchitall{
+	text-align:center;
+	margin-top:300px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+#searchbar1 {
+	font-size:40px;
+	margin-left:200px;
+}
+
+#hrsearchpage {
+	margin-top:10px;
+}
+
+.footersearch {
+	margin-top:300px;
+}
+
+.footersearch li {
+	display:inline;
+	padding-left:40px;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+.footersearch ul {
+	text-decoration: none;
+	margin-left:450px;
+	margin-top:100px;
+}
+
+.footersearch a:-webkit-any-link{
+	color: black;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.footersearch a:hover {
+	color:#808080;
+}
+
+.footersearch a:linked{
+	color:black;
+}
+
+.footersearch #two {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+	margin-top:100px;
+	font-size:10px;
+}
+
+
+

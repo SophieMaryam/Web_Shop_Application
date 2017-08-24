@@ -1,4 +1,3 @@
-
 doctype
 html
 	head
@@ -15,49 +14,51 @@ html
 				ul
 					li 
 						a(href="/contact") Contact
-					li
-						a(href="/search") Search	
 					li 
 						if user
 							a(href="/profile") Profile
 						else 
 							a(href="/login") Login
+					li
+						a(href="/search") Search
+					li 
+						a(href="/collection") Go Shopping
 					li#top1
 						a(href="/") Ucci
 
-		p#collection 'Be <strong> Bold' </strong> Collection
+		p#collection 'Be <strong> Bold' </strong> Collection: For Him
 		hr.hrcollection
 		div.clotheslist
 			div.eachitem
-				each item in eachItem
+				each clothes in male
 					ul.mainlist
 						li.typename <strong> Name: </strong>
-							.typespan #{item.name}
+							.typespan #{clothes.name}
 						li.color <strong> Color: </strong> 
-							.colorspan #{item.color}
+							.colorspan #{clothes.color}
 						br
 						li.price <strong> Price: </strong>
-							span.pricespan #{item.price} EUR
+							span.pricespan #{clothes.price} EUR
 						li.url
-							- var location = item.url
+							- var location = clothes.url
 							img(src=`${location}` style="height:400px; width:400px")
 						li.buttons 
-							button.waves-effect.waves-light.btn.modal-trigger.center-align.black(href=`#newpost${item.id}`, data-target="newpost" data-id=`${item.id}` class="buybutton") Buy
-							div(id=`newpost${item.id}` class='modal')
+							button.waves-effect.waves-light.btn.modal-trigger.center-align.black(href=`#newpost${clothes.id}`, data-target="newpost" data-id=`${clothes.id}` class="buybutton") Buy
+							div(id=`newpost${clothes.id}` class='modal')
 								.modal-content
 									div#modalparent
 										div#modalleft
-											h3 #{item.name}
-											- var location = item.url
+											h3 #{clothes.name}
+											- var location = clothes.url
 											h1 
 											img(src=`${location}` style="height:300px; width:400px")
 											br
 											br
 										div#modalright
-											h6 <strong> price: </strong> #{item.price} EUR 
+											h6 <strong> price: </strong> #{clothes.price} EUR 
 										div#paypal
 											div#paypal-button
-							//- button.iconbutton(type="button" id=item.id)
+							//- button.iconbutton(type="button" id=clothes.id)
 							//- 	img#icon(src="/images/inon2.png" width="30px" height="30px")
 
 		br
@@ -82,9 +83,9 @@ html
 		script.
 			$(document).ready(() => {
 			//- $(".iconbutton").click( function() {
-			//- 	var itemId = $(this).attr('id');
-			//- 	console.log('itemId:   ' + itemId);
-			//- 	var wishlist = {result:true, clothesid:itemId};
+			//- 	var clothesId = $(this).attr('id');
+			//- 	console.log('clothesId:   ' + clothesId);
+			//- 	var wishlist = {result:true, clothesid:clothesId};
 
 			//- 	console.log('does click work?')
 			//- 	$.post("/icons", wishlist, (res) => {
@@ -115,7 +116,7 @@ html
 						payment: {
 							transactions: [
 								{
-									amount: {total: `${item.price}`, currency: 'USD'}
+									amount: {total: `${clothes.price}`, currency: 'USD'}
 								}
 							]
 						}
