@@ -5,19 +5,8 @@ const bodyParser = require('body-parser');
 app.use('/', bodyParser.urlencoded({extended:true}));
 
 const nodemailer = require('nodemailer');
-
-// Sessions
 const session = require('express-session');
-app.use(session({
-	secret: "This is a secret",
-	resave:false,
-	saveUninitialized: true,
-	store: new SequelizeStore({
-		db: sequelize,
-		checkExpirationInterval: 30 * 60 * 1000,
-		expiration : 24 * 60 * 60 * 1000
-	})
-}));
+
 
 // Sequelize
 const Sequelize = require('sequelize');
@@ -30,6 +19,19 @@ const sequelize = new Sequelize('webshopapplication','postgres',1626,  {
 		timestamps: false
 	}
 });
+
+// Sessions
+app.use(session({
+	secret: "This is a secret",
+	resave:false,
+	saveUninitialized: true,
+	store: new SequelizeStore({
+		db: sequelize,
+		checkExpirationInterval: 30 * 60 * 1000,
+		expiration : 24 * 60 * 60 * 1000
+	})
+}));
+
 
 // bcrypt
 const bcrypt = require('bcrypt');
