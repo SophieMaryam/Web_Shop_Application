@@ -796,16 +796,10 @@ html, body {
 	padding-bottom:4px;
 }
 
-#mainbar h3 {
-
-}
-
-
-#searchengine {
-	float:right;
-	margin-left:15px;
+#profsearchengine {
 	position:absolute;
 	margin-top:40px;
+	float:right;
 }
 
 #searchbar1 {
@@ -818,6 +812,7 @@ html, body {
     border-right:none;
     outline:none;
     font-size:20px;
+    margin-right:170px;
 }
 
 #hrprofile {
@@ -991,9 +986,13 @@ html, body {
 }
 #modalright {
 	float:right;
-	margin-right:100px;
+	margin-right:80px;
+	margin-top:80px;
 }
 
+#paypal {
+	margin-right:10px;
+}
 
 #modalparent {
 	overflow:hidden;
@@ -1048,9 +1047,17 @@ html, body {
 	font-family: 'Raleway', sans-serif;
 }
 
-#searchbar1 {
+#searchbarr {
 	font-size:40px;
 	margin-left:200px;
+	background-color:transparent;
+	color: black;
+    resize: none;
+    border-bottom-style:solid black;
+    border-top:none;
+    border-left: none;
+    border-right:none;
+    outline:none;
 }
 
 #hrsearchpage {

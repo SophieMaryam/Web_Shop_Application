@@ -11,7 +11,7 @@ const session = require('express-session');
 // Sequelize
 const Sequelize = require('sequelize');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const sequelize = new Sequelize('webshopapplication','postgres',1626,  {
+const sequelize = new Sequelize('webshopapplication', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
 	host: 'localhost',
 	dialect: 'postgres',
 	storage: './session.postgres',
@@ -94,7 +94,7 @@ const Clothes = sequelize.define('clothes',{
 // Wishlist.hasMany(Clothes);
 // Wishlist.belongsTo(User);
 
-// sequelize.sync({force:true});
+sequelize.sync({force:false});
 
 
 // Home page
